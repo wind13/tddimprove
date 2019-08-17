@@ -24,5 +24,6 @@ object TestSchemaParser {
         assertEquals("bool", schema.value("l"))
         assertEquals("int", schema.value("p"))
         assertEquals("str", schema.value("d"))
+        assertEquals(null, schema.value("n"))
     }
 }

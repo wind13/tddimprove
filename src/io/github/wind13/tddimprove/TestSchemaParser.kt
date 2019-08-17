@@ -7,8 +7,7 @@ object TestSchemaParser {
     @Test
     fun test_schema_parser_input(): Unit {
         val config = "l:bool, p:int, d:str"
-        var schema: Schema = SchemaParser.parse(config)
-//        assertEquals(config, schema.getConfig())
+        val schema: Schema = Schema(config)
         assertEquals(3, schema.size())
         assertEquals("l:bool", schema.getFirst())
     }

@@ -20,5 +20,7 @@ object TestSchemaParser {
         assertEquals("int", schema.nth(1).type)
         assertEquals("d", schema.nth(2).label)
         assertEquals("str", schema.nth(2).type)
+
+        assertEquals("str", schema.value("d"))
     }
 }

@@ -11,8 +11,8 @@ class Schema(config:String) {
         return specs.size
     }
 
-    fun getFirst(): Spec {
-        return specs.get(0)
+    fun nth(n:Int): Spec {
+        return specs.get(n)
     }
 
 }

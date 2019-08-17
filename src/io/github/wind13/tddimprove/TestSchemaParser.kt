@@ -9,10 +9,9 @@ object TestSchemaParser {
         val config = "l:bool, p:int, d:str"
         val schema: Schema = Schema(config)
         assertEquals(3, schema.size())
-//        assertEquals("java.lang.String", schema.getFirst().javaClass.name)
-        print(schema.getFirst().javaClass.name)
-        assertEquals("l", schema.getFirst().label)
-        assertEquals("bool", schema.getFirst().type)
+        assertEquals("io.github.wind13.tddimprove.Spec", schema.nth(0).javaClass.name)
+        assertEquals("l", schema.nth(0).label)
+        assertEquals("bool", schema.nth(0).type)
 
         val spec:Spec = Spec("a", "b")
         assertEquals("a", spec.label)

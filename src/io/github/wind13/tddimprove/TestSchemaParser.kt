@@ -9,5 +9,6 @@ object TestSchemaParser {
         val config = "l:bool, p:int, d:str"
         var schema: Schema = SchemaParser.parse(config)
         assertEquals(config, schema.getConfig())
+        assertEquals(3, schema.size())
     }
 }

@@ -11,4 +11,8 @@ class Schema() {
         return this.config
     }
 
+    fun size(): Int {
+        return this.config.split(",").size
+    }
+
 }

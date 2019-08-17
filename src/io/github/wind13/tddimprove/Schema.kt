@@ -11,12 +11,15 @@ class Schema() {
         return this.config
     }
 
+    private lateinit var specs: List<String>
+
     fun size(): Int {
-        return this.config.split(",").size
+        this.specs = this.config.split(",")
+        return specs.size
     }
 
     fun getFirst(): String {
-        return this.config.split(",").get(0)
+        return specs.get(0)
     }
 
 }

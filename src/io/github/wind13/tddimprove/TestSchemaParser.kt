@@ -21,6 +21,8 @@ object TestSchemaParser {
         assertEquals("d", schema.nth(2).label)
         assertEquals("str", schema.nth(2).type)
 
+        assertEquals("bool", schema.value("l"))
+        assertEquals("int", schema.value("p"))
         assertEquals("str", schema.value("d"))
     }
 }

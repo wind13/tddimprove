@@ -10,5 +10,7 @@ object TestSchemaParser {
         val schema: Schema = Schema(config)
         assertEquals(3, schema.size())
         assertEquals("java.lang.String", schema.getFirst().javaClass.name)
+
+        val spec:Spec = Spec("a", "b")
     }
 }

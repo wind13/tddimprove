@@ -15,4 +15,8 @@ class Schema() {
         return this.config.split(",").size
     }
 
+    fun getFirst(): String {
+        return this.config.split(",").get(0)
+    }
+
 }

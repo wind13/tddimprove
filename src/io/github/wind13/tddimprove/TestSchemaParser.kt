@@ -10,5 +10,6 @@ object TestSchemaParser {
         var schema: Schema = SchemaParser.parse(config)
         assertEquals(config, schema.getConfig())
         assertEquals(3, schema.size())
+        assertEquals("l:bool", schema.getFirst())
     }
 }

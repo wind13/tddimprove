@@ -4,7 +4,7 @@ class Schema(config:String) {
 
     val specs: List<Spec> = config.split(",").map {
         val ss = it.split(":")
-        Spec(ss.get(0), ss.get(1))
+        Spec(ss.get(0).trim(), ss.get(1).trim())
     }
 
     fun size(): Int {

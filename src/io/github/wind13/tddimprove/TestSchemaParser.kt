@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 object TestSchemaParser {
     @Test
     fun test_schema_parser_input(): Unit {
-        val spec:Spec = Spec("a", "b")
+        val spec: Spec = Spec("a", "b")
         assertEquals("a", spec.label)
         assertEquals("b", spec.type)
 
@@ -24,6 +24,6 @@ object TestSchemaParser {
         assertEquals("bool", schema.value("l"))
         assertEquals("int", schema.value("p"))
         assertEquals("str", schema.value("d"))
-        assertEquals(null, schema.value("n"))
+        assertEquals("", schema.value("n"))
     }
 }

@@ -1,6 +1,6 @@
 package io.github.wind13.tddimprove
 
-class Schema(config:String) {
+class Schema(config: String) {
 
     val specs: List<Spec> = config.split(",").map {
         val ss = it.split(":")
@@ -11,14 +11,14 @@ class Schema(config:String) {
         return specs.size
     }
 
-    fun nth(n:Int): Spec {
+    fun nth(n: Int): Spec {
         return specs.get(n)
     }
 
     fun value(label: String): String? {
-        return specs.find{
+        return specs.find {
             it.label == label
-        }?.type
+        }?.type ?: ""
     }
 
 }

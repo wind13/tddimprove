@@ -3,7 +3,7 @@ package io.github.wind13.tddimprove
 import org.testng.annotations.Test
 import kotlin.test.assertEquals
 
-object TestSchemaParser {
+object SchemaParseTest {
     @Test
     fun test_schema_parser_input(): Unit {
         val spec: Spec = Spec("a", "b")

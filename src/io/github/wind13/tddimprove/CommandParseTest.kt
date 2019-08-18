@@ -9,6 +9,7 @@ object CommandParseTest {
     fun test_param_create(): Unit {
         val p1:Param = Param("l  ")
         assertEquals("l", p1.input)
+        assertEquals("l", p1.getLabel())
         val p2:Param = Param("p 8080  ")
         assertEquals("p 8080", p2.input)
     }

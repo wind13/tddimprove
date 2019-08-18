@@ -11,7 +11,8 @@ object CommandParseTest {
         assertEquals("l", p1.getLabel())
         assertEquals("", p1.getType())
         val p2:Param = Param("p 8080  ")
-//        assertEquals("p 8080", p2.input)
+        assertEquals("p", p2.getLabel())
+        assertEquals("8080", p2.getType())
     }
     @Test
     fun test_command_parser_input(): Unit {

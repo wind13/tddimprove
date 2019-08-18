@@ -7,7 +7,7 @@ class Param(input:String) {
     return params.get(0).trim()
   }
 
-  fun getType(): String {
+  fun getValue(): String {
     if (params.size > 1) {
       return params.get(1).trim()
     } else {

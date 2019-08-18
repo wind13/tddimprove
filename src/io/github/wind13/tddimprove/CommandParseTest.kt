@@ -26,7 +26,6 @@ object CommandParseTest {
     fun test_command_parse_output(): Unit {
         val commandLine: String = "java -jar server.jar -l -p 8080 -d /usr/logs"
         val command: Command = Command(commandLine)
-//        assertEquals(true, command.getValue("l"))
-        assertEquals(9, 3*3)
+        assertEquals(true, command.getValue("l"))
     }
 }

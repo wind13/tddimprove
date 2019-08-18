@@ -22,7 +22,7 @@ class Schema(config: String) {
     }
 
     fun parse(commandLine: String): Command {
-        return Command("")
+        return Command()
     }
 
 }

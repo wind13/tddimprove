@@ -2,6 +2,7 @@ package io.github.wind13.tddimprove
 
 class Schema(config: String) {
 
+    private lateinit var params: List<Param>
     val specs: List<Spec> = config.split(",").map {
         val ss = it.split(":")
         Spec(ss.get(0).trim(), ss.get(1).trim())
@@ -22,6 +23,9 @@ class Schema(config: String) {
     }
 
     fun parse(commandLine: String): Command {
+        params = commandLine.split("-").map {
+            Param(it)
+        }
         return Command()
     }
 

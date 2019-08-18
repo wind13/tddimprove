@@ -10,6 +10,7 @@ object CommandParseTest {
         val p1:Param = Param("l  ")
         assertEquals("l", p1.input)
         assertEquals("l", p1.getLabel())
+        assertEquals("", p1.getType())
         val p2:Param = Param("p 8080  ")
         assertEquals("p 8080", p2.input)
     }

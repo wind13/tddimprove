@@ -3,16 +3,13 @@ package io.github.wind13.tddimprove
 class Param(input:String) {
   private val params = input.split(" ")
   private val label: String = params.get(0).trim()
+  private val value: String = if (params.size > 1) params.get(1).trim() else ""
 
   fun getLabel(): String {
-    return params.get(0).trim()
+    return label
   }
 
   fun getValue(): String {
-    if (params.size > 1) {
-      return params.get(1).trim()
-    } else {
-      return ""
-    }
+    return value
   }
 }

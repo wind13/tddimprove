@@ -21,4 +21,8 @@ class Schema(config: String) {
         }?.type ?: ""
     }
 
+    fun parse(commandLine: String): Command {
+        return Command("")
+    }
+
 }

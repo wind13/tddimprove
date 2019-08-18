@@ -26,7 +26,7 @@ object CommandParseTest {
     fun test_command_parse_output(): Unit {
         val commandLine: String = "java -jar server.jar -l -p 8080 -d /usr/logs"
         val schema: Schema = Schema("l:bool, p:int, d:str")
-//        val command: Command = schema.parse(commandLine)
-//        assertEquals(true, command.getValue("l"))
+        val command: Command = schema.parse(commandLine)
+        assertEquals(true, command.getValue("l"))
     }
 }

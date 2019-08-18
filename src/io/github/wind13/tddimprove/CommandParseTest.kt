@@ -6,6 +6,11 @@ import kotlin.test.assertEquals
 object CommandParseTest {
 
     @Test
+    fun test_param_create(): Unit {
+        val param:Param = Param("-l")
+        assertEquals("-l", param.input)
+    }
+    @Test
     fun test_command_parser_input(): Unit {
         val commandLine: String = "java -jar server.jar -l -p 8080 -d /usr/logs"
         val command:Command = Command(commandLine)

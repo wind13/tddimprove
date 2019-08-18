@@ -5,4 +5,8 @@ class Command(val commandLine: String) {
         return true
     }
 
+    fun parse(schema: Schema) {
+
+    }
+
 }

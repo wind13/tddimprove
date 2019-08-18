@@ -1,5 +1,5 @@
 package io.github.wind13.tddimprove
 
-class Param(val input:String) {
-
+class Param(input:String) {
+  public val input = input.trim()
 }

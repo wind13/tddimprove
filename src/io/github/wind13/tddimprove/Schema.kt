@@ -16,7 +16,7 @@ class Schema(config: String) {
         return specs.get(n)
     }
 
-    fun value(label: String): String? {
+    fun getType(label: String): String? {
         return specs.find {
             it.label == label
         }?.type ?: ""

@@ -24,7 +24,7 @@ class Schema(config: String) {
 
     fun parse(commandLine: String): Command {
         params = commandLine.split("-").map {
-            Param(it)
+            Param(it.trim())
         }
         return Command(this, params)
     }

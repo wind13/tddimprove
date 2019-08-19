@@ -23,6 +23,7 @@ object CommandParseTest {
         assertEquals(schema, command.schema)
         assertEquals(5, command.params.size)
         assertEquals("java", command.getCommand())
+        assertEquals("8080", command.getParam("p"))
         assertEquals(true, command.getValue("l"))
     }
 }

@@ -20,6 +20,8 @@ object CommandParseTest {
         val commandLine: String = "java -jar server.jar -l -p 8080 -d /usr/logs"
         val schema: Schema = Schema("l:bool, p:int, d:str")
         val command: Command = schema.parse(commandLine)
+        assertEquals(schema, command.schema)
+        assertEquals(5, command.params.size)
         assertEquals(true, command.getValue("l"))
     }
 }

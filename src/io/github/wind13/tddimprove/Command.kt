@@ -6,6 +6,6 @@ class Command(val schema: Schema, val params: List<Param>) {
     }
 
     fun getCommand(): String {
-        return params.get(0).getLabel()
+        return params.get(0).input
     }
 }

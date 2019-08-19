@@ -1,5 +1,7 @@
 package io.github.wind13.tddimprove
 
+import java.lang.Integer.parseInt
+
 class Command(val schema: Schema, val commandLine: String) {
     val params = commandLine.split("-").map {
         Param(it.trim())
@@ -9,6 +11,7 @@ class Command(val schema: Schema, val commandLine: String) {
     fun getValue(label: String): Any {
         when (schema.getType(label)) {
             "bool" -> return getParam(label) == ""
+            "int" -> return parseInt(getParam(label))
             else -> return getParam(label)
         }
     }

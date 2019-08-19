@@ -32,5 +32,6 @@ object CommandParseTest {
         assertEquals("int", schema.getType("p"))
 
         assertEquals(true, command.getValue("l"))
+        assertEquals(8080, command.getValue("p"))
     }
 }

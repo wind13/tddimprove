@@ -26,7 +26,7 @@ class Schema(config: String) {
         params = commandLine.split("-").map {
             Param(it)
         }
-        return Command()
+        return Command(this, params)
     }
 
 }

@@ -16,12 +16,6 @@ object CommandParseTest {
     }
 
     @Test
-    fun test_command_parser_input(): Unit {
-        val commandLine: String = "java -jar server.jar -l -p 8080 -d /usr/logs"
-        val command: Command = Command()
-    }
-
-    @Test
     fun test_command_parse_output(): Unit {
         val commandLine: String = "java -jar server.jar -l -p 8080 -d /usr/logs"
         val schema: Schema = Schema("l:bool, p:int, d:str")

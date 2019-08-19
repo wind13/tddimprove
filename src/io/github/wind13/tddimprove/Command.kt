@@ -6,19 +6,18 @@ class Command(val schema: Schema, val commandLine: String) {
     }
 
 
-
-    fun getValue(label: String): Boolean {
-        when {
-            schema.getType(label) == "bool" -> return getParam(label) == ""
+    fun getValue(label: String): Any {
+        when (schema.getType(label)) {
+            "bool" -> return getParam(label) == ""
+            else -> return getParam(label)
         }
-        return true
     }
 
     fun getCommand(): String {
         return params.get(0).input
     }
 
-    fun getParam(label: String): String? {
-        return params.find { it.getLabel() == label }?.getValue()
+    fun getParam(label: String): String {
+        return params.find { it.getLabel() == label }?.getValue()?:""
     }
 }

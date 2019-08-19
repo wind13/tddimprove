@@ -28,6 +28,8 @@ object CommandParseTest {
         assertEquals("/usr/logs", command.getParam("d"))
 
         assertEquals("str", schema.getType("d"))
+        assertEquals("str", schema.getType("jar"))
+        assertEquals("int", schema.getType("p"))
 
         assertEquals(true, command.getValue("l"))
     }

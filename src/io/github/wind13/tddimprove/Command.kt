@@ -2,7 +2,9 @@ package io.github.wind13.tddimprove
 
 class Command(val schema: Schema, val params: List<Param>) {
     fun getValue(label: String): Boolean {
-        schema.getType(label)
+        when {
+            schema.getType(label) == "bool" -> return true
+        }
         return true
     }
 

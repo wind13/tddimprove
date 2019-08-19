@@ -22,7 +22,7 @@ object CommandParseTest {
         val command: Command = schema.parse(commandLine)
         assertEquals(schema, command.schema)
         assertEquals(5, command.params.size)
-        assertEquals(true, command.getValue("l"))
         assertEquals("java", command.getCommand())
+        assertEquals(true, command.getValue("l"))
     }
 }

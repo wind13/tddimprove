@@ -23,5 +23,6 @@ object CommandParseTest {
         assertEquals(schema, command.schema)
         assertEquals(5, command.params.size)
         assertEquals(true, command.getValue("l"))
+        assertEquals("java", command.getCommand())
     }
 }

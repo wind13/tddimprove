@@ -27,6 +27,8 @@ object CommandParseTest {
         assertEquals("server.jar", command.getParam("jar"))
         assertEquals("/usr/logs", command.getParam("d"))
 
+        assertEquals("str", schema.getType("d"))
+
         assertEquals(true, command.getValue("l"))
     }
 }

@@ -9,7 +9,7 @@ class Command(val schema: Schema, val commandLine: String) {
 
     fun getValue(label: String): Boolean {
         when {
-            schema.getType(label) == "bool" -> return true
+            schema.getType(label) == "bool" -> return getParam(label) == ""
         }
         return true
     }

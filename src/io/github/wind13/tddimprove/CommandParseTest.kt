@@ -26,6 +26,7 @@ object CommandParseTest {
         assertEquals("8080", command.getParam("p"))
         assertEquals("server.jar", command.getParam("jar"))
         assertEquals("/usr/logs", command.getParam("d"))
+
         assertEquals(true, command.getValue("l"))
     }
 }

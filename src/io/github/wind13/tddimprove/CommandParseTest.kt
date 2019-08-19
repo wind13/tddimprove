@@ -18,7 +18,7 @@ object CommandParseTest {
     @Test
     fun test_command_parse_output(): Unit {
         val commandLine: String = "java -jar server.jar -l -p 8080 -d /usr/logs"
-        val schema: Schema = Schema("l:bool, p:int, d:str")
+        val schema: Schema = Schema("l:bool, p:int")
         val command: Command = schema.parse(commandLine)
         assertEquals(schema, command.schema)
         assertEquals(5, command.params.size)
@@ -33,5 +33,7 @@ object CommandParseTest {
 
         assertEquals(true, command.getValue("l"))
         assertEquals(8080, command.getValue("p"))
+        assertEquals("server.jar", command.getValue("jar"))
+        assertEquals("/usr/logs", command.getValue("d"))
     }
 }

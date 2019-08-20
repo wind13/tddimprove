@@ -10,6 +10,7 @@ object ParserTest {
         var parser: Parser = Parser("bool")
         assertEquals("bool", parser.type)
         assertEquals(true, parser.parse("true"))
+        assertEquals(false, parser.parse("false"))
         parser = Parser("int")
         assertEquals(8080, parser.parse("8080"))
     }

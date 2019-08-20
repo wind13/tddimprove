@@ -6,7 +6,9 @@ object CommanderTest {
 
     @Test
     fun test_create_commander(): Unit {
-        val commander:Commander = Commander()
-        assert(commander.toString().length > 0)
+        val input = "l:bool:true|p:int:8050|d:str:/usr/logs"
+        val schema: Schema = Schema(input)
+        val commander:Commander = schema.parse("-l -p 8010 -d /usr/local")
+        assert(commander.toString().contains("Commander"))
     }
 }

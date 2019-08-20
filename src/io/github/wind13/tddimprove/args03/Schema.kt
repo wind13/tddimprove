@@ -11,5 +11,9 @@ class Schema(val input: String) {
         return find(label)?.default ?: ""
     }
 
+    fun parse(line: String): Commander {
+        return Commander()
+    }
+
     val specs: List<Spec> = input.split("|").map { Spec(it) }
 }

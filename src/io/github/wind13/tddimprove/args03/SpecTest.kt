@@ -7,7 +7,7 @@ object SpecTest {
 
     @Test
     fun test_create_spec(): Unit {
-        val input = "l:bool:true"
+        val input = "l:  bool:  true  "
         val spec: Spec = Spec(input)
         assertEquals(input, spec.input)
         assertEquals("l", spec.label)
@@ -16,7 +16,7 @@ object SpecTest {
     }
 
     fun test_int_spec(): Unit {
-        val input = "p:int:8020"
+        val input = "p:int: 8020 "
         val spec: Spec = Spec(input)
         assertEquals(input, spec.input)
         assertEquals("p", spec.label)
@@ -25,7 +25,7 @@ object SpecTest {
     }
 
     fun test_ints_spec(): Unit {
-        val input = "p:int[]:80,20"
+        val input = "p :int[]:80, 20"
         val spec: Spec = Spec(input)
         assertEquals(input, spec.input)
         assertEquals("p", spec.label)
@@ -33,7 +33,7 @@ object SpecTest {
         assertEquals(listOf(80, 20), spec.default)
     }
     fun test_strs_spec(): Unit {
-        val input = "d:str[]:test,good"
+        val input = "d:str[]:test,  good"
         val spec: Spec = Spec(input)
         assertEquals(input, spec.input)
         assertEquals("d", spec.label)

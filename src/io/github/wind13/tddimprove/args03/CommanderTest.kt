@@ -12,5 +12,7 @@ object CommanderTest {
         val commander:Commander = schema.parse("java -jar server.jar -l -p 8010 -d /usr/local")
         assert(commander.toString().contains("Commander"))
         assertEquals(5, commander.params.size)
+//        assertEquals(8010, commander.value("p"))
+//        assertEquals(8010, commander.value("p"))
     }
 }

@@ -13,6 +13,6 @@ object CommanderTest {
         assert(commander.toString().contains("Commander"))
         assertEquals(5, commander.params.size)
         assertEquals("java", commander.command)
-//        assertEquals(8010, commander.param("p"))
+        assertEquals(8010, commander.param("p"))
     }
 }

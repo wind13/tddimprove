@@ -1,4 +1,4 @@
-package io.github.wind13.tddimprove
+package io.github.wind13.tddimprove.args02
 
 import org.testng.annotations.Test
 import kotlin.test.assertEquals

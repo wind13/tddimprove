@@ -1,4 +1,4 @@
-package io.github.wind13.tddimprove
+package io.github.wind13.tddimprove.args02
 
 class Param(val input:String) {
   private val params = input.split(" ")

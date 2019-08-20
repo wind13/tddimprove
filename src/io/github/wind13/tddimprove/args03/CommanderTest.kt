@@ -6,7 +6,7 @@ import org.testng.annotations.Test
 object CommanderTest {
 
     @Test
-    fun test_create_commander(): Unit {
+    fun test_normal_commander(): Unit {
         val input = "l:bool:true|p:int:8050|d:str:/usr/logs"
         val schema: Schema = Schema(input)
         val commander:Commander = schema.parse("java -jar server.jar -l -p 8010 -d /usr/local")
@@ -19,5 +19,13 @@ object CommanderTest {
         assertEquals(true, commander.param("l"))
         assertEquals(8010, commander.param("p"))
         assertEquals("/usr/local", commander.param("d"))
+    }
+
+    @Test
+    fun test_array_commander(): Unit {
+        val input = "l:bool:true|p:int:8050|d:str:/usr/logs"
+        val schema: Schema = Schema(input)
+        val commander:Commander = schema.parse("java -jar capture.jar -url www.baidu.com -p 8010 -d /usr/local")
+        assert(commander.toString().contains("Commander"))
     }
 }

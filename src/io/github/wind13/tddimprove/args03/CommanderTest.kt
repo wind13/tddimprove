@@ -10,5 +10,6 @@ object CommanderTest {
         val schema: Schema = Schema(input)
         val commander:Commander = schema.parse("-l -p 8010 -d /usr/local")
         assert(commander.toString().contains("Commander"))
+//        assertEquals(3, commander.params)
     }
 }

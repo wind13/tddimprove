@@ -12,6 +12,7 @@ object ParserTest {
         assertEquals(true, parser.parse("true"))
         assertEquals(false, parser.parse("false"))
         assertEquals(false, parser.parse("abc"))
+        assertEquals(false, parser.parse(""))
         parser = Parser("int")
         assertEquals(8080, parser.parse("8080"))
     }

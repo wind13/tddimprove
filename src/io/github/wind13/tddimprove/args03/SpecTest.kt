@@ -7,9 +7,11 @@ object SpecTest {
 
     @Test
     fun test_create_spec(): Unit {
-
         val input = "l:bool:true"
         val spec:Spec = Spec(input)
         assertEquals(input, spec.input)
+        assertEquals("l", spec.label)
+        assertEquals("bool", spec.type)
+        assertEquals("true", spec.default)
     }
 }

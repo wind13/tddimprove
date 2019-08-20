@@ -4,6 +4,7 @@
 out
 lib
 *.iml
+.DS_Store
 
 # Created by .ignore support plugin (hsz.mobi)
 ### JetBrains template

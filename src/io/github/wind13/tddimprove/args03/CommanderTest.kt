@@ -15,7 +15,7 @@ object CommanderTest {
         assertEquals("java", commander.command)
         assertEquals(8050, commander.default("p"))
         assertEquals("server.jar", commander.param("jar"))
-//        assertEquals(true, commander.param("l"))
+        assertEquals(true, commander.param("l"))
         assertEquals(8010, commander.param("p"))
         assertEquals("/usr/local", commander.param("d"))
     }

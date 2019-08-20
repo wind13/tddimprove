@@ -9,12 +9,14 @@ object ParserTest {
     fun test_create_parser(): Unit {
         var parser: Parser = Parser("bool")
         assertEquals("bool", parser.type)
-        assertEquals(true, parser.parse("true"))
-        assertEquals(false, parser.parse("false"))
-        assertEquals(false, parser.parse("abc"))
+        assertEquals(true, parser.parse("true  "))
+        assertEquals(false, parser.parse("false "))
+        assertEquals(false, parser.parse(" abc"))
         assertEquals(false, parser.parse(""))
         parser = Parser("int")
         assertEquals(8080, parser.parse("8080"))
+        parser = Parser("int[]")
+        assertEquals(listOf(80, 90), parser.parse("80, 90"))
         parser = Parser("str")
         assertEquals("abc", parser.parse("abc"))
     }

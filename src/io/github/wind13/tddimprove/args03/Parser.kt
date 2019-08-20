@@ -6,6 +6,7 @@ class Parser(val type: String) {
         return when (type) {
             "int" -> trimedValue.toInt()
             "bool" -> trimedValue.toBoolean()
+            "int[]" -> trimedValue.split(",").map { it.trim().toInt() }
             else -> trimedValue
         }
     }

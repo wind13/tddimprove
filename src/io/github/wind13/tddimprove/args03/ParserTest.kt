@@ -17,6 +17,8 @@ object ParserTest {
         assertEquals(8080, parser.parse("8080"))
         parser = Parser("int[]")
         assertEquals(listOf(80, 90), parser.parse("80, 90"))
+        parser = Parser("bool[]")
+        assertEquals(listOf(false, true), parser.parse("false, true"))
         parser = Parser("str")
         assertEquals("abc", parser.parse("abc"))
     }

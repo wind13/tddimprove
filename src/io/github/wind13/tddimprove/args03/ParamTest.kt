@@ -11,5 +11,6 @@ object ParamTest {
         val param = Param(input)
         assertEquals(input, param.input)
         assertEquals("p", param.label)
+        assertEquals("8010", param.value)
     }
 }

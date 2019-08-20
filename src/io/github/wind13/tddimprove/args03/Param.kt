@@ -1,5 +1,11 @@
 package io.github.wind13.tddimprove.args03
 
 class Param(val input:String) {
-    val label: String = input.trim().split(" ")[0]
+    private fun trimSplit(n:Int) = input.trim().split(regex)[n].trim()
+
+//    val regex = Regex("\\d+")
+    val regex = Regex(" ")
+    val label: String = trimSplit(0)
+
+    val value: String = trimSplit(1)
 }

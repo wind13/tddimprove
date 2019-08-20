@@ -7,6 +7,8 @@ object ParserTest {
 
     @Test
     fun test_create_parser(): Unit {
-        assertEquals("bool", Parser("bool").type)
+        val parser: Parser = Parser("bool")
+        assertEquals("bool", parser.type)
+        assertEquals(true, parser.parse("true"))
     }
 }

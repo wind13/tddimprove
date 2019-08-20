@@ -7,6 +7,6 @@ object ParserTest {
 
     @Test
     fun test_create_parser(): Unit {
-        assertEquals(9, 3*3)
+        assertEquals("bool", Parser("bool").type)
     }
 }

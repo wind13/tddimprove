@@ -15,5 +15,7 @@ object SchemaTest {
         assertEquals(8050, schema.default("p"))
         assertEquals(true, schema.default("l"))
         assertEquals("", schema.default("s"))
+
+//        schema.parse("-l -p 8010 -d /usr/local")
     }
 }

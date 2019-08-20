@@ -6,6 +6,6 @@ object SpecTest {
 
     @Test
     fun test_create_spec(): Unit {
-//        assert(Spec("l:bool:true"))
+        val spec:Spec = Spec("l:bool:true")
     }
 }

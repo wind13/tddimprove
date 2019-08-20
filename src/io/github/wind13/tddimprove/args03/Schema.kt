@@ -12,7 +12,7 @@ class Schema(val input: String) {
     }
 
     fun parse(line: String): Commander {
-        return Commander(line)
+        return Commander(this, line)
     }
 
     val specs: List<Spec> = input.split("|").map { Spec(it) }

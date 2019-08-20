@@ -32,8 +32,8 @@ object CommanderTest {
         assertEquals("java", commander.command)
         assertEquals("www.baidu.com", commander.param("url"))
         assertEquals("capture.jar", commander.param("jar"))
+        assertEquals(listOf("a", "b", "c"), commander.default("t"))
         assertEquals(listOf("jpg", "png", "svg"), commander.param("t"))
-//        assertEquals(8010, commander.param("p"))
         assertEquals("/usr/images", commander.param("d"))
     }
 }

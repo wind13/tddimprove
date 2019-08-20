@@ -14,5 +14,6 @@ object CommanderTest {
         assertEquals(5, commander.params.size)
         assertEquals("java", commander.command)
         assertEquals(8050, commander.default("p"))
+        assertEquals(8010, commander.param("p"))
     }
 }

@@ -23,9 +23,9 @@ object CommanderTest {
 
     @Test
     fun test_array_commander(): Unit {
-        val input = "l:bool:true|p:int:8050|d:str:/usr/logs"
+        val input = "l:bool:true|t:str[]:8050|d:str:/usr/logs"
         val schema: Schema = Schema(input)
-        val commander:Commander = schema.parse("java -jar capture.jar -url www.baidu.com -p 8010 -d /usr/local")
+        val commander:Commander = schema.parse("java -jar capture.jar -url www.baidu.com -t jpg,png,svg -d /usr/images")
         assert(commander.toString().contains("Commander"))
     }
 }

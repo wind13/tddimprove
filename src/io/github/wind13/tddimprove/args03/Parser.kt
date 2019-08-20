@@ -6,14 +6,16 @@ class Parser(val type: String) {
     private fun trimToBool(it: String) = it.trim().toBoolean()
     private fun trimToInt(it: String) = it.trim().toInt()
 
-    fun parse(strValue: String): Any {
+    fun parse(input: String): Any {
         return when (type) {
-            "int" -> trimToInt(strValue)
-            "bool" -> trimToBool(strValue)
-            "int[]" -> strValue.split(",").map{ trimToInt(it) }
-            "bool[]" -> strValue.split(",").map { trimToBool(it) }
-            "str[]" -> strValue.split(",").map { trimToStr(it) }
-            else -> trimToStr(strValue)
+            "int" -> trimToInt(input)
+            "bool" -> trimToBool(input)
+            "int[]" -> trimToInts(input)
+            "bool[]" -> input.split(",").map { trimToBool(it) }
+            "str[]" -> input.split(",").map { trimToStr(it) }
+            else -> trimToStr(input)
         }
     }
+
+    private fun trimToInts(input: String) = input.split(",").map { trimToInt(it) }
 }

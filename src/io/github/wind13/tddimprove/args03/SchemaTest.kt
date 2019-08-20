@@ -14,5 +14,6 @@ object SchemaTest {
         assertEquals("int", schema.type("p"))
         assertEquals(8050, schema.default("p"))
         assertEquals(true, schema.default("l"))
+        assertEquals("", schema.default("s"))
     }
 }

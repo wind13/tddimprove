@@ -5,5 +5,9 @@ class Schema(val input: String) {
         return specs.find { it.label == label }?.type ?: ""
     }
 
+    fun default(input: String): Int {
+        return 8050
+    }
+
     val specs: List<Spec> = input.split("|").map { Spec(it) }
 }

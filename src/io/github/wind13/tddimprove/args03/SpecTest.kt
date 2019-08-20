@@ -22,4 +22,12 @@ object SpecTest {
         assertEquals("int", spec.type)
         assertEquals(8020, spec.default)
     }
+    fun test_ints_spec(): Unit {
+        val input = "p:int[]:80,20"
+        val spec:Spec = Spec(input)
+        assertEquals(input, spec.input)
+        assertEquals("p", spec.label)
+        assertEquals("int[]", spec.type)
+        assertEquals(listOf(80,20), spec.default)
+    }
 }

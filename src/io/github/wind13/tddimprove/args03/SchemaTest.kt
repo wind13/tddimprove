@@ -13,5 +13,6 @@ object SchemaTest {
         assertEquals(3, schema.specs.size)
         assertEquals("int", schema.type("p"))
         assertEquals(8050, schema.default("p"))
+        assertEquals(true, schema.default("l"))
     }
 }

@@ -8,7 +8,7 @@ class Schema(val input: String) {
     }
 
     fun default(label: String): Any {
-        return find(label)?.default?:""
+        return find(label)?.default ?: ""
     }
 
     val specs: List<Spec> = input.split("|").map { Spec(it) }

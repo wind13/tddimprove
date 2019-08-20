@@ -1,11 +1,12 @@
 package io.github.wind13.tddimprove.args03
 
 class Parser(val type: String) {
-    fun parse(v: String): Any {
+    fun parse(strValue: String): Any {
+        val trimedValue = strValue.trim()
         return when (type) {
-            "int" -> v.trim().toInt()
-            "bool" -> v.trim().toBoolean()
-            else -> v.trim()
+            "int" -> trimedValue.toInt()
+            "bool" -> trimedValue.toBoolean()
+            else -> trimedValue
         }
     }
 

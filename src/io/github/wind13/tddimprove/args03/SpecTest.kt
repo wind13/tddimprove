@@ -12,6 +12,6 @@ object SpecTest {
         assertEquals(input, spec.input)
         assertEquals("l", spec.label)
         assertEquals("bool", spec.type)
-        assertEquals("true", spec.default)
+        assertEquals(true, spec.default)
     }
 }

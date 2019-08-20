@@ -7,7 +7,7 @@ object ParamTest {
 
     @Test
     fun test_create_param(): Unit {
-        val input = "p 8010 "
+        val input = "p   8010 "
         val param = Param(input)
         assertEquals(input, param.input)
         assertEquals("p", param.label)

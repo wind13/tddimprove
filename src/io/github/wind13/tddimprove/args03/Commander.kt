@@ -11,6 +11,7 @@ class Commander(val schema: Schema, val line: String) {
 
     fun param(label: String): Any {
         val value = params.find { it.label == label }?.value ?: ""
-        return if (value == "") default(label) else Parser.parse(schema.type(label), value)
+        val parsedValue = Parser.parse(schema.type(label), value)
+        return if (value == "") default(label) else parsedValue
     }
 }

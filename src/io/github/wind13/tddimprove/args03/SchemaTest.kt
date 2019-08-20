@@ -8,8 +8,9 @@ object SchemaTest {
     @Test
     fun test_create_schema(): Unit {
         val input = "l:bool:true|p:int:8050|d:str:/usr/logs"
-        val schema:Schema = Schema(input)
+        val schema: Schema = Schema(input)
         assertEquals(input, schema.input)
-        assertEquals(3, schema.params.size)
+        assertEquals(3, schema.specs.size)
+        assertEquals("int", schema.type("p"))
     }
 }

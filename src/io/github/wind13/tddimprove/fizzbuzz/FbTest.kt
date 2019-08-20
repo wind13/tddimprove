@@ -1,3 +1,5 @@
+package io.github.wind13.tddimprove.fizzbuzz
+
 import org.testng.annotations.Test
 import kotlin.test.assertEquals
 

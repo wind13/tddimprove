@@ -1,3 +1,5 @@
+package io.github.wind13.tddimprove.fizzbuzz
+
 object Fb {
     fun isDiv(d:Int, n:Int): Boolean {
         return n % d == 0 || n.toString().contains(d.toString())

@@ -21,5 +21,7 @@ object ParserTest {
         assertEquals(listOf(false, true), parser.parse("false, true"))
         parser = Parser("str")
         assertEquals("abc", parser.parse("abc"))
+        parser = Parser("str[]")
+        assertEquals(listOf("abc", "def"), parser.parse("abc, def"))
     }
 }

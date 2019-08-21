@@ -1,9 +1,8 @@
 package io.github.wind13.tddimprove.money
 
-class Franc(override var amount: Int) : Money() {
-    override var currency = "CHF"
+class Franc(override val amount: Int, override val currency: String) : Money(amount, currency) {
     override fun times(multiplier: Int): Money {
-        return Franc(amount * multiplier)
+        return franc(amount * multiplier)
     }
 }
 

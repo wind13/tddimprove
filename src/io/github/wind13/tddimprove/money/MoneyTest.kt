@@ -15,6 +15,8 @@ object MoneyTest {
         val fifteen = five.times(3)
         assertEquals(Dollar(15), fifteen)
     }
+
+    @Test
     fun test_franc_multiplication(): Unit {
         val five = Franc(5)
         assertEquals(5, five.amount)

@@ -19,6 +19,15 @@ open class Money(val amount: Int, val currency: String) {
         return Money(amount * multiplier, currency)
     }
 
+    fun plus(added: Money, bank: Bank, currency: String): Money {
+        return Money(this.trans(bank, currency).amount + added.trans(bank, currency).amount, currency)
+    }
+
+    fun trans(bank: Bank, currency: String): Money {
+        val rate = bank.rate(this.currency, currency)
+        return Money(amount * rate, currency)
+    }
+
     override fun equals(other: Any?): Boolean {
         return when (other) {
             !is Money -> false
@@ -31,14 +40,5 @@ open class Money(val amount: Int, val currency: String) {
         var result = 17
         result = result * 31 + amount.hashCode()
         return result
-    }
-
-    fun plus(added: Money, bank: Bank, currency: String): Money {
-        return Money(this.trans(bank, currency).amount + added.trans(bank, currency).amount, currency)
-    }
-
-    fun trans(bank: Bank, currency: String): Money {
-        val rate = bank.rate(this.currency, currency)
-        return Money(amount * rate, currency)
     }
 }

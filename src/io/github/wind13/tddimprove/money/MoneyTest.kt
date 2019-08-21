@@ -1,8 +1,8 @@
 package io.github.wind13.tddimprove.money
 
+import org.testng.Assert.assertEquals
+import org.testng.Assert.assertNotEquals
 import org.testng.annotations.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNotEquals
 
 object MoneyTest {
 
@@ -28,5 +28,13 @@ object MoneyTest {
         assertEquals(Franc(10), product)
         val fifteen = five.times(3)
         assertEquals(Franc(15), fifteen)
+    }
+
+    @Test
+    fun test_money_multiplication(): Unit {
+        val franc = Franc(5)
+        val dollar = Dollar(5)
+        assertEquals(franc, dollar)
+//        assertEquals(franc, dollar)
     }
 }

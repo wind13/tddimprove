@@ -51,7 +51,8 @@ object MoneyTest {
         assertEquals(Money.dollar(13), sum)
         val eightFranc = Money.franc(8)
         assertEquals(Money.franc(10), fiveDollar.trans(bank, "CHF"))
+        assertEquals(Money.franc(8), eightFranc.trans(bank, "CHF"))
         val merged:Money = fiveDollar.plus(eightFranc, bank, "CHF")
-//        assertEquals(Money.franc(13), sum)
+        assertEquals(Money.franc(18), merged)
     }
 }

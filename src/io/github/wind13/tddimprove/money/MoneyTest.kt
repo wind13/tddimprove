@@ -32,8 +32,10 @@ object MoneyTest {
 
     @Test
     fun test_money_multiplication(): Unit {
+        val moneyFranc = Money(5, "CHF")
         val franc = Money.franc(5)
         assertEquals("CHF", franc.currency())
+        assertEquals(moneyFranc, franc)
         val dollar = Money.dollar(5)
         assertEquals("USD", dollar.currency())
         assertEquals(franc, dollar)

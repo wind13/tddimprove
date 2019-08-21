@@ -1,6 +1,6 @@
 package io.github.wind13.tddimprove.money
 
-abstract class Money(val amount: Int, val currency: String) {
+open class Money(val amount: Int, val currency: String) {
     fun currency(): String {
         return currency
     }
@@ -15,7 +15,9 @@ abstract class Money(val amount: Int, val currency: String) {
         }
     }
 
-    abstract fun times(multiplier: Int): Money
+    open fun times(multiplier: Int): Money {
+        return Money(amount * multiplier, currency)
+    }
 
     override fun equals(other: Any?): Boolean {
         return when (other) {

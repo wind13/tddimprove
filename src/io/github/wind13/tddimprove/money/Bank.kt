@@ -8,6 +8,7 @@ class Bank {
     }
 
     fun rate(currency1: String, currency2: String): Int {
+        if (currency1 == currency2) return 1
         return rates.find { it.currency1 == currency1 && it.currency2 == currency2 }?.rate?:1
     }
 

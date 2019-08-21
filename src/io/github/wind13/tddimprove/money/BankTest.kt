@@ -13,7 +13,7 @@ object BankTest {
         assert(2 == rate)
         val fiveDollars = Money.dollar(5)
         val tenFrancs = Money.franc(10)
-        val result:Money = bank.reduce(fiveDollars.plus(tenFrancs), "USD")
+        val result:Money = bank.reduce(fiveDollars.plus(tenFrancs, bank, "USD"), "USD")
         assertEquals(15, result.amount)
     }
 }

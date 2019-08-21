@@ -33,7 +33,7 @@ open class Money(val amount: Int, val currency: String) {
         return result
     }
 
-    fun plus(added: Money): Money {
+    fun plus(added: Money, bank: Bank, currency: String): Money {
         return Money(amount + added.amount, currency)
     }
 }

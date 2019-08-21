@@ -1,6 +1,8 @@
 package io.github.wind13.tddimprove.money
 
-abstract class Money(var amount: Int) {
+abstract class Money {
+    abstract var amount: Int
+    abstract fun currency(): String
 
     companion object {
         fun dollar(amount: Int): Dollar {

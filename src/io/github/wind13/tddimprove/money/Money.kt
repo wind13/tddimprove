@@ -1,6 +1,6 @@
 package io.github.wind13.tddimprove.money
 
-class Money(var amount: Int) {
+open class Money(var amount: Int) {
     fun times(multiplier: Int): Money {
         return Money(amount * multiplier)
     }

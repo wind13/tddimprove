@@ -9,6 +9,6 @@ object BankTest {
         val bank = Bank()
         bank.addRate("USD", "CHF", 2)
         val rate = bank.rate("USD", "CHF")
-//        assert(2 == rate)
+        assert(2 == rate)
     }
 }

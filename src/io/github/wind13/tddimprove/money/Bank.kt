@@ -1,10 +1,10 @@
 package io.github.wind13.tddimprove.money
 
 class Bank {
-    private var rates: List<Rate> = ArrayList<Rate>()
+    private var rates: MutableList<Rate> = ArrayList<Rate>()
 
-    fun addRate(currency1: String, currency2: String, rate: Int): List<Rate> {
-        return rates
+    fun addRate(currency1: String, currency2: String, rate: Int): Unit {
+        rates.add(Rate(currency1, currency2, rate))
     }
 
     fun rate(currency1: String, currency2: String): Int {

@@ -1,6 +1,6 @@
 package io.github.wind13.tddimprove.money
 
-abstract class Money(open val amount: Int, open val currency: String) {
+abstract class Money(val amount: Int, val currency: String) {
     fun currency(): String {
         return currency
     }

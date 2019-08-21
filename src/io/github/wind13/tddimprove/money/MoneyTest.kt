@@ -38,7 +38,6 @@ object MoneyTest {
         assertEquals(moneyFranc, franc)
         val dollar = Money.dollar(5)
         assertEquals("USD", dollar.currency())
-        assertEquals(franc, dollar)
-//        assertEquals(franc, dollar)
+        assertNotEquals(franc, dollar)
     }
 }

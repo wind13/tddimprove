@@ -23,7 +23,7 @@ open class Money(val amount: Int, val currency: String) {
         return when (other) {
             !is Money -> false
             else -> this === other ||
-                    amount == other.amount
+                    (amount == other.amount && currency == other.currency)
         }
     }
 

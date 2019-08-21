@@ -11,4 +11,8 @@ class Bank {
         return rates.find { it.currency1 == currency1 && it.currency2 == currency2 }?.rate?:0
     }
 
+    fun reduce(money: Money, currency: String): Money {
+        return money
+    }
+
 }

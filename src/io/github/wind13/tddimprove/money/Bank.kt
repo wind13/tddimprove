@@ -13,7 +13,7 @@ class Bank {
     }
 
     fun reduce(money: Money, currency: String): Money {
-        return money
+        return money.trans(this, currency)
     }
 
 }

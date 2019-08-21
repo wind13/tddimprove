@@ -32,4 +32,8 @@ open class Money(val amount: Int, val currency: String) {
         result = result * 31 + amount.hashCode()
         return result
     }
+
+    fun plus(added: Money): Money {
+        return Money(amount + added.amount, currency)
+    }
 }

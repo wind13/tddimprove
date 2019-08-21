@@ -40,4 +40,10 @@ object MoneyTest {
         assertEquals("USD", dollar.currency())
         assertNotEquals(franc, dollar)
     }
+
+    @Test
+    fun test_sum_money(): Unit {
+        val sum:Money = Money.dollar(5).plus(Money.dollar(8))
+        assertEquals(Money.dollar(13), sum)
+    }
 }

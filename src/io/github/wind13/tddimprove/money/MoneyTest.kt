@@ -8,14 +8,14 @@ object MoneyTest {
 
     @Test
     fun test_dollar_multiplication(): Unit {
-        val five = Dollar(5)
+        val five = Money.dollar(5)
         assertEquals(5, five.amount)
-        assertEquals(Dollar(5), Dollar(5))
-        assertNotEquals(Dollar(5), Dollar(6))
+        assertEquals(Money.dollar(5), Money.dollar(5))
+        assertNotEquals(Money.dollar(5), Money.dollar(6))
         val product = five.times(2)
-        assertEquals(Dollar(10), product)
+        assertEquals(Money.dollar(10), product)
         val fifteen = five.times(3)
-        assertEquals(Dollar(15), fifteen)
+        assertEquals(Money.dollar(15), fifteen)
     }
 
     @Test

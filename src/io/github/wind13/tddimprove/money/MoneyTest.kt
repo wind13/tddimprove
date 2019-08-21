@@ -45,10 +45,13 @@ object MoneyTest {
     fun test_sum_money(): Unit {
         val bank = Bank()
         bank.addRate("USD", "CHF", 2)
-        val sum:Money = Money.dollar(5).plus(Money.dollar(8), bank, "USD")
+//        bank.addRate("CHF", "USD", 0.5)
+        val fiveDollar = Money.dollar(5)
+        val sum:Money = fiveDollar.plus(Money.dollar(8), bank, "USD")
         assertEquals(Money.dollar(13), sum)
         val eightFranc = Money.franc(8)
-        val merged:Money = Money.dollar(5).plus(eightFranc, bank, "USD")
+        assertEquals(Money.franc(10), fiveDollar.trans(bank, "CHF"))
+        val merged:Money = fiveDollar.plus(eightFranc, bank, "USD")
 //        assertEquals(Money.dollar(9), sum)
     }
 }

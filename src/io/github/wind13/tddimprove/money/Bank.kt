@@ -8,7 +8,7 @@ class Bank {
     }
 
     fun rate(currency1: String, currency2: String): Int {
-        return rates.find { it.currency1 == currency1 && it.currency2 == currency2 }?.rate?:0
+        return rates.find { it.currency1 == currency1 && it.currency2 == currency2 }?.rate?:1
     }
 
     fun reduce(money: Money, currency: String): Money {

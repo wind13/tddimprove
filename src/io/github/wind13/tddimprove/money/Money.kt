@@ -36,4 +36,9 @@ open class Money(val amount: Int, val currency: String) {
     fun plus(added: Money, bank: Bank, currency: String): Money {
         return Money(amount + added.amount, currency)
     }
+
+    fun trans(bank: Bank, currency: String): Any? {
+        val rate = bank.rate(this.currency, currency)
+        return Money(amount * rate, currency)
+    }
 }

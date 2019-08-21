@@ -20,20 +20,20 @@ object MoneyTest {
 
     @Test
     fun test_franc_multiplication(): Unit {
-        val five = Franc(5)
+        val five = Money.franc(5)
         assertEquals(5, five.amount)
-        assertEquals(Franc(5), Franc(5))
-        assertNotEquals(Franc(6), Franc(5))
+        assertEquals(Money.franc(5), Money.franc(5))
+        assertNotEquals(Money.franc(6), Money.franc(5))
         val product = five.times(2)
-        assertEquals(Franc(10), product)
+        assertEquals(Money.franc(10), product)
         val fifteen = five.times(3)
-        assertEquals(Franc(15), fifteen)
+        assertEquals(Money.franc(15), fifteen)
     }
 
     @Test
     fun test_money_multiplication(): Unit {
-        val franc = Franc(5)
-        val dollar = Dollar(5)
+        val franc = Money.franc(5)
+        val dollar = Money.dollar(5)
         assertEquals(franc, dollar)
 //        assertEquals(franc, dollar)
     }

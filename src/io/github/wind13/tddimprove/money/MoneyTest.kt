@@ -11,5 +11,6 @@ object MoneyTest {
         assertEquals(5, five.amount)
         assertEquals(10, five.times(2).amount)
         assertEquals(15, five.times(3).amount)
+        assertEquals(Dollar(5), Dollar(5))
     }
 }

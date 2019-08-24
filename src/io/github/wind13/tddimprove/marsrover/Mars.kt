@@ -4,8 +4,14 @@ class Mars(val width:Int, val height:Int) {
     fun main(args: Array<String>) {
         print("Mars main")
     }
+    val N = "O"
+    val Y = "*"
 
     fun display(): String {
-        return "mars "
+        var s = ""
+        for (i in 1..width) {
+            s += "mars \n mars"
+        }
+        return s
     }
 }

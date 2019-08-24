@@ -50,10 +50,8 @@ object MarsTest {
         assertEquals(size, mars.width)
         assertEquals(size, mars.height)
         val r = Random.nextInt(size)
-        println(r)
         assert(r < size)
         val o = Random.nextInt(size)
-        println(o)
         assert(o < size)
         print(mars.display())
     }

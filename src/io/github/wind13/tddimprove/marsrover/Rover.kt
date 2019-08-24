@@ -19,6 +19,10 @@ class Rover {
         }
     }
 
+    fun left() {
+        this.direction = this.direction
+    }
+
     lateinit var state: String
         private set
     var x: Int = 0

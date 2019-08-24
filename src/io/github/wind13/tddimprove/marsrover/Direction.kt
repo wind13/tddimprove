@@ -7,6 +7,10 @@ enum class Direction {
         return this.toString().first()
     }
 
+    fun left(): Direction {
+        return NORTH
+    }
+
     companion object {
         fun getValue(short: Char): Direction {
             return when(short) {

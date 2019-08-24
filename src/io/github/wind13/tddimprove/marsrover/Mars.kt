@@ -8,3 +8,7 @@ fun main(args: Array<String>) {
     print(add(6,3))
 }
 
+
+object Mars {
+    val width:Int = 1000
+}

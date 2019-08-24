@@ -18,4 +18,9 @@ object MarsTest {
         assertEquals('S', Dirction.SOUTH.short())
         assertEquals(Dirction.EAST, Dirction.getValue('E'))
     }
+
+    @Test
+    fun test_mars_created(): Unit {
+        assertEquals(1000, Mars.width)
+    }
 }

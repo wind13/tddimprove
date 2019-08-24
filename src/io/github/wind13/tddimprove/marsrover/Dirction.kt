@@ -7,5 +7,10 @@ enum class Dirction {
         return this.toString().first().toString()
     }
 
+    companion object {
+        fun getValue(short: Char): Dirction {
+            return EAST
+        }
+    }
 
 }

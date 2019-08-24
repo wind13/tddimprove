@@ -16,6 +16,6 @@ object MarsTest {
         assertEquals(50, rover.y)
         assertEquals(Dirction.SOUTH, rover.d)
         assertEquals("S", Dirction.SOUTH.short())
-//        assertEquals(Dirction.EAST, Dirction.getValue('E'))
+        assertEquals(Dirction.EAST, Dirction.getValue('E'))
     }
 }

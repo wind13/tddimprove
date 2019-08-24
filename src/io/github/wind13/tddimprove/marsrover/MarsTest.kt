@@ -4,10 +4,6 @@ import org.testng.annotations.Test
 import kotlin.test.assertEquals
 
 object MarsTest {
-    @Test
-    fun test_normal_fun(): Unit {
-        assertEquals(11, add(3, 8))
-    }
 
     @Test
     fun test_rover_created(): Unit {
@@ -21,8 +17,9 @@ object MarsTest {
 
     @Test
     fun test_mars_created(): Unit {
-        val mars = Mars(1000, 1000)
-        assertEquals(1000, mars.width)
-        assertEquals(1000, mars.height)
+        val size = 1000
+        val mars = Mars(size, size)
+        assertEquals(size, mars.width)
+        assertEquals(size, mars.height)
     }
 }

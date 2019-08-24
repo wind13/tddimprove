@@ -11,9 +11,9 @@ object MarsTest {
         val rover = Rover("23,50|S")
         assertEquals(23, rover.x)
         assertEquals(50, rover.y)
-        assertEquals(Dirction.SOUTH, rover.dirction)
-        assertEquals('S', Dirction.SOUTH.short())
-        assertEquals(Dirction.EAST, Dirction.getValue('E'))
+        assertEquals(Direction.SOUTH, rover.direction)
+        assertEquals('S', Direction.SOUTH.short())
+        assertEquals(Direction.EAST, Direction.getValue('E'))
     }
 
     @Test

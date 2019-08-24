@@ -1,6 +1,6 @@
 package io.github.wind13.tddimprove.marsrover
 
-enum class Dirction {
+enum class Direction {
     NORTH, SOUTH, WEST, EAST;
 
     fun short(): Char {
@@ -8,7 +8,7 @@ enum class Dirction {
     }
 
     companion object {
-        fun getValue(short: Char): Dirction {
+        fun getValue(short: Char): Direction {
             return when(short) {
                 'N' -> NORTH
                 'S' -> SOUTH

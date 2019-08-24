@@ -26,6 +26,7 @@ object MarsTest {
         assertEquals(Direction.NORTH, rover.direction)
 
         rover.forward(20)
+        assertEquals(69, rover.y)
     }
 
     @Test

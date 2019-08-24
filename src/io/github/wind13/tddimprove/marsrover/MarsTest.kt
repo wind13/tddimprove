@@ -24,6 +24,8 @@ object MarsTest {
         assertEquals(size, mars.height)
         val r = Random.nextInt(size)
         print(r)
-        assert(r < size)
+        val o = Random.nextInt(size)
+        print(o)
+        assert(o < size)
     }
 }

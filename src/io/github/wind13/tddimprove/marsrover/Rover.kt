@@ -1,7 +1,7 @@
 package io.github.wind13.tddimprove.marsrover
 
 class Rover {
-    fun setState(state: String) {
+    fun land(state: String) {
         this.state = state
         val ss = state.split("|")
         val xy = ss.get(0).split(",")
@@ -31,6 +31,8 @@ class Rover {
         this.forward(-step)
     }
 
+    var speed: Int = 1
+
     lateinit var state: String
         private set
     var x: Int = 0
@@ -46,8 +48,8 @@ class Rover {
         this.direction = direction
     }
 
-    constructor(state: String) {
-        this.setState(state)
+    constructor(speed: Int) {
+        this.speed = speed
     }
 
 }

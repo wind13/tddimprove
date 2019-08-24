@@ -14,6 +14,6 @@ object MarsTest {
         val rover:Rover = Rover("23,50,S")
         assertEquals(23, rover.x)
         assertEquals(50, rover.y)
-        assertEquals("S", rover.d)
+        assertEquals(Dirction.SOUTH, rover.d)
     }
 }

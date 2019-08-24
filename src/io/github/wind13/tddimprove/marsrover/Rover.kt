@@ -2,8 +2,11 @@ package io.github.wind13.tddimprove.marsrover
 
 class Rover {
     var x: Int = 0
+        private set
     var y: Int = 0
+        private set
     var direction: Direction = Direction.SOUTH
+        private set
 
     constructor(x:Int, y:Int, direction: Direction) {
         this.x = x

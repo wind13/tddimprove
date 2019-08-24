@@ -8,7 +8,8 @@ object MarsTest {
 
     @Test
     fun test_rover_created(): Unit {
-        val rover = Rover("23,50|S")
+        val state = "23,50|S"
+        val rover = Rover(state)
         assertEquals(23, rover.x)
         assertEquals(50, rover.y)
         assertEquals(Direction.SOUTH, rover.direction)

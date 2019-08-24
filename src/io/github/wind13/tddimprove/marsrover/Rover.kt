@@ -10,6 +10,15 @@ class Rover {
         this.direction = Direction.getValue(ss.get(1).last())
     }
 
+    fun forward(step: Int) {
+        when(this.direction) {
+            Direction.SOUTH -> this.y -= step
+            Direction.NORTH -> this.y += step
+            Direction.WEST -> this.x -= step
+            Direction.EAST -> this.x += step
+        }
+    }
+
     lateinit var state: String
         private set
     var x: Int = 0

@@ -7,6 +7,12 @@ import kotlin.test.assertEquals
 object MarsTest {
 
     @Test
+    fun test_direction(): Unit {
+        assertEquals('S', Direction.SOUTH.short())
+        assertEquals(Direction.EAST, Direction.getValue('E'))
+    }
+
+    @Test
     fun test_rover_created(): Unit {
         val state = "23,50|S"
         val rover = Rover(state)
@@ -14,12 +20,12 @@ object MarsTest {
         assertEquals(23, rover.x)
         assertEquals(50, rover.y)
         assertEquals(Direction.SOUTH, rover.direction)
-        assertEquals('S', Direction.SOUTH.short())
-        assertEquals(Direction.EAST, Direction.getValue('E'))
         rover.setState("39,49|N")
         assertEquals(39, rover.x)
         assertEquals(49, rover.y)
         assertEquals(Direction.NORTH, rover.direction)
+
+        rover.forward(20)
     }
 
     @Test

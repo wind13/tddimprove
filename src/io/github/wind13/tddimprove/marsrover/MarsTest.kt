@@ -23,6 +23,7 @@ object MarsTest {
         assertEquals(size, mars.width)
         assertEquals(size, mars.height)
         val r = Random.nextInt(size)
+        print(r)
         assert(r < size)
     }
 }

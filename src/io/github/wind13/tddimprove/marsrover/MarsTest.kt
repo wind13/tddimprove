@@ -22,5 +22,6 @@ object MarsTest {
     @Test
     fun test_mars_created(): Unit {
         assertEquals(1000, Mars.width)
+        assertEquals(1000, Mars.height)
     }
 }

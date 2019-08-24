@@ -53,6 +53,19 @@ object MarsTest {
         assert(r < size)
         val o = Random.nextInt(size)
         assert(o < size)
-        print(mars.display())
+//        print(mars.display())
+        val s = """
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        """.trimIndent()
+        assertEquals(s, mars.display())
     }
 }

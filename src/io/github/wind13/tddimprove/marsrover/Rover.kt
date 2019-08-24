@@ -1,13 +1,17 @@
 package io.github.wind13.tddimprove.marsrover
 
-class Rover {
+class Rover(val speed: Int) {
+    fun land(x:Int, y:Int, direction: Direction) {
+        this.x = x
+        this.y = y
+        this.direction = direction
+    }
+
     fun land(state: String) {
         this.state = state
         val ss = state.split("|")
         val xy = ss.get(0).split(",")
-        this.x = xy.get(0).trim().toInt()
-        this.y = xy.get(1).trim().toInt()
-        this.direction = Direction.getValue(ss.get(1).last())
+        this.land(xy.get(0).trim().toInt(), xy.get(1).trim().toInt(), Direction.getValue(ss.get(1).last()))
     }
 
     fun forward(step: Int) {
@@ -31,8 +35,6 @@ class Rover {
         this.forward(-step)
     }
 
-    var speed: Int = 1
-
     lateinit var state: String
         private set
     var x: Int = 0
@@ -41,15 +43,4 @@ class Rover {
         private set
     var direction: Direction = Direction.SOUTH
         private set
-
-    constructor(x:Int, y:Int, direction: Direction) {
-        this.x = x
-        this.y = y
-        this.direction = direction
-    }
-
-    constructor(speed: Int) {
-        this.speed = speed
-    }
-
 }

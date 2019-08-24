@@ -37,6 +37,8 @@ object MarsTest {
         assertEquals(69, rover.y)
         rover.left()
         assertEquals(Direction.WEST, rover.direction)
+        rover.backward(20)
+        assertEquals(59, rover.x)
         rover.right()
         assertEquals(Direction.NORTH, rover.direction)
     }

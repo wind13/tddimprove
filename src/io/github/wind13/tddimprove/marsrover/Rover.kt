@@ -27,6 +27,10 @@ class Rover {
         this.direction = this.direction.right()
     }
 
+    fun backward(step: Int) {
+        this.forward(-step)
+    }
+
     lateinit var state: String
         private set
     var x: Int = 0

@@ -13,5 +13,7 @@ object MarsTest {
     fun test_rover_created(): Unit {
         val rover:Rover = Rover("23,50,S")
         assertEquals(23, rover.x)
+        assertEquals(50, rover.y)
+        assertEquals("S", rover.d)
     }
 }

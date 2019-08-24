@@ -17,7 +17,9 @@ object MarsTest {
         assertEquals(Direction.SOUTH, Direction.EAST.right())
         assertEquals(Direction.NORTH, Direction.WEST.right())
         assertEquals(Direction.WEST, Direction.SOUTH.right())
-        assertEquals(Direction.SOUTH, Direction.random())
+        val dr = Direction.random()
+        println(dr.name)
+        assert(dr.javaClass.name.contains("Direction"))
     }
 
     @Test

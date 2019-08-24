@@ -37,7 +37,7 @@ enum class Direction {
         }
 
         fun random(): Direction {
-            return SOUTH
+            return Direction.values().random()
         }
     }
 

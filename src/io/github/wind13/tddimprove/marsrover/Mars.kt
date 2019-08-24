@@ -8,10 +8,8 @@ class Mars(val width:Int, val height:Int) {
     val Y = "*"
 
     fun display(): String {
-        var s = ""
-        for (i in 1..width) {
-            s += "mars \n mars"
-        }
-        return s
+        return (1..height).map {
+            (1..width).map { N }.joinToString { "" }
+        }.joinToString { "\n" }
     }
 }

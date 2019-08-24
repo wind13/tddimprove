@@ -23,15 +23,17 @@ object MarsTest {
     @Test
     fun test_rover_created(): Unit {
         val speed = 2
+        val size = 100
+        val mars = Mars(size, size)
         val rover = Rover(speed)
         val state = "23,50|S"
 //        val rover = Rover(state)
-        rover.land(state)
+        rover.land(mars, state)
         assertEquals(state, rover.state)
         assertEquals(23, rover.x)
         assertEquals(50, rover.y)
         assertEquals(Direction.SOUTH, rover.direction)
-        rover.land("39,49|N")
+        rover.land(mars, "39,49|N")
         assertEquals(39, rover.x)
         assertEquals(49, rover.y)
         assertEquals(Direction.NORTH, rover.direction)
@@ -77,8 +79,9 @@ object MarsTest {
         val mars = Mars(size, size)
         val state = "23,50|S"
         val rover = Rover(2)
-        rover.land(mars)
+        val stateLand = rover.land(mars, state)
         assertEquals(state, rover.state)
+        assertEquals(state, stateLand)
         assertEquals(23, rover.x)
         assertEquals(Direction.SOUTH, rover.direction)
         rover.forward(30)

@@ -7,7 +7,7 @@ class Rover(val speed: Int) {
         this.direction = direction
     }
 
-    public fun land(state: String) {
+    private fun land(state: String) {
         this.state = state
         val ss = state.split("|")
         val xy = ss.get(0).split(",")
@@ -37,6 +37,11 @@ class Rover(val speed: Int) {
 
     fun land(mars: Mars): String {
         this.land("23,50|S")
+        return this.state;
+    }
+
+    fun land(mars: Mars, state: String): String {
+        this.land(state)
         return this.state;
     }
 

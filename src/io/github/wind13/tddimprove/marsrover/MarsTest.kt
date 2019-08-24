@@ -11,10 +11,10 @@ object MarsTest {
 
     @Test
     fun test_rover_created(): Unit {
-        val rover:Rover = Rover("23,50,S")
+        val rover = Rover("23,50|S")
         assertEquals(23, rover.x)
         assertEquals(50, rover.y)
-        assertEquals(Dirction.SOUTH, rover.d)
+        assertEquals(Dirction.SOUTH, rover.dirction)
         assertEquals('S', Dirction.SOUTH.short())
         assertEquals(Dirction.EAST, Dirction.getValue('E'))
     }

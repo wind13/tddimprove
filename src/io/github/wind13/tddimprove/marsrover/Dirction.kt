@@ -9,7 +9,13 @@ enum class Dirction {
 
     companion object {
         fun getValue(short: Char): Dirction {
-            return EAST
+            return when(short) {
+                'N' -> NORTH
+                'S' -> SOUTH
+                'W' -> WEST
+                'E' -> EAST
+                else -> NORTH
+            }
         }
     }
 

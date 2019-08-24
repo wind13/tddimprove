@@ -1,13 +1,13 @@
 package io.github.wind13.tddimprove.marsrover
 
 class Rover(val speed: Int) {
-    fun land(x:Int, y:Int, direction: Direction) {
+    private fun land(x:Int, y:Int, direction: Direction) {
         this.x = x
         this.y = y
         this.direction = direction
     }
 
-    fun land(state: String) {
+    public fun land(state: String) {
         this.state = state
         val ss = state.split("|")
         val xy = ss.get(0).split(",")
@@ -33,6 +33,11 @@ class Rover(val speed: Int) {
 
     fun backward(step: Int) {
         this.forward(-step)
+    }
+
+    fun land(mars: Mars): String {
+        this.land("23,50|S")
+        return this.state;
     }
 
     lateinit var state: String

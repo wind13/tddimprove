@@ -73,11 +73,13 @@ object MarsTest {
 
     @Test
     fun test_rover_research(): Unit {
-        val size = 10
+        val size = 100
         val mars = Mars(size, size)
         val state = "23,50|S"
         val rover = Rover(2)
-        rover.land(state)
+        rover.land(mars)
+        assertEquals(state, rover.state)
+        assertEquals(23, rover.x)
         assertEquals(Direction.SOUTH, rover.direction)
         rover.forward(30)
     }

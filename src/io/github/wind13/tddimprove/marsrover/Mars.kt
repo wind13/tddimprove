@@ -9,7 +9,7 @@ class Mars(val width:Int, val height:Int) {
 
     fun display(): String {
         return (1..height).map {
-            return (1..width).map { return N }.joinToString { "" }
+            return (1..width).map { N }.joinToString { "" }
         }.joinToString { "\n" }
     }
 }

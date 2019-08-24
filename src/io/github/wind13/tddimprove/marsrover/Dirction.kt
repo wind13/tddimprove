@@ -6,4 +6,6 @@ enum class Dirction {
     fun short(): String {
         return this.toString().first().toString()
     }
+
+
 }

@@ -8,7 +8,12 @@ enum class Direction {
     }
 
     fun left(): Direction {
-        return NORTH
+        return when(this) {
+            EAST -> NORTH
+            NORTH -> WEST
+            WEST -> SOUTH
+            SOUTH -> EAST
+        }
     }
 
     companion object {

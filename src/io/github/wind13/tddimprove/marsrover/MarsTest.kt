@@ -11,6 +11,9 @@ object MarsTest {
         assertEquals('S', Direction.SOUTH.short())
         assertEquals(Direction.EAST, Direction.getValue('E'))
         assertEquals(Direction.NORTH, Direction.EAST.left())
+        assertEquals(Direction.EAST, Direction.SOUTH.left())
+        assertEquals(Direction.WEST, Direction.NORTH.left())
+        assertEquals(Direction.SOUTH, Direction.WEST.left())
     }
 
     @Test

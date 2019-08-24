@@ -14,6 +14,10 @@ object MarsTest {
         assertEquals(Direction.EAST, Direction.SOUTH.left())
         assertEquals(Direction.WEST, Direction.NORTH.left())
         assertEquals(Direction.SOUTH, Direction.WEST.left())
+        assertEquals(Direction.EAST, Direction.NORTH.right())
+        assertEquals(Direction.SOUTH, Direction.EAST.right())
+        assertEquals(Direction.NORTH, Direction.WEST.right())
+        assertEquals(Direction.WEST, Direction.SOUTH.right())
     }
 
     @Test
@@ -32,7 +36,9 @@ object MarsTest {
         rover.forward(20)
         assertEquals(69, rover.y)
         rover.left()
-//        rover.right()
+        assertEquals(Direction.WEST, rover.direction)
+        rover.right()
+        assertEquals(Direction.NORTH, rover.direction)
     }
 
     @Test

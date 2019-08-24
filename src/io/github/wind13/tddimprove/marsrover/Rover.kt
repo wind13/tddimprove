@@ -20,7 +20,11 @@ class Rover {
     }
 
     fun left() {
-        this.direction = this.direction
+        this.direction = this.direction.left()
+    }
+
+    fun right() {
+        this.direction = this.direction.right()
     }
 
     lateinit var state: String

@@ -16,6 +16,15 @@ enum class Direction {
         }
     }
 
+    fun right(): Direction {
+        return when(this) {
+            NORTH -> EAST
+            WEST -> NORTH
+            SOUTH -> WEST
+            EAST -> SOUTH
+        }
+    }
+
     companion object {
         fun getValue(short: Char): Direction {
             return when(short) {

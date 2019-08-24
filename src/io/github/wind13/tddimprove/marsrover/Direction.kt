@@ -35,6 +35,10 @@ enum class Direction {
                 else -> NORTH
             }
         }
+
+        fun random(): Direction {
+            return SOUTH
+        }
     }
 
 }

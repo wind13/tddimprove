@@ -1,7 +1,6 @@
 package io.github.wind13.tddimprove.marsrover
 
 import org.testng.annotations.Test
-import kotlin.random.Random
 import kotlin.test.assertEquals
 
 object MarsTest {
@@ -18,6 +17,7 @@ object MarsTest {
         assertEquals(Direction.SOUTH, Direction.EAST.right())
         assertEquals(Direction.NORTH, Direction.WEST.right())
         assertEquals(Direction.WEST, Direction.SOUTH.right())
+        assertEquals(Direction.SOUTH, Direction.random())
     }
 
     @Test
@@ -54,10 +54,6 @@ object MarsTest {
         val mars = Mars(size, size)
         assertEquals(size, mars.width)
         assertEquals(size, mars.height)
-        val r = Random.nextInt(size)
-        assert(r < size)
-        val o = Random.nextInt(size)
-        assert(o < size)
         val s = """
         OOOOOOOOOO
         OOOOOOOOOO

@@ -1,7 +1,9 @@
 package io.github.wind13.tddimprove.marsrover
 
+import kotlin.random.Random
+
 class Rover(val speed: Int) {
-    private fun land(x:Int, y:Int, direction: Direction) {
+    private fun land(x: Int, y: Int, direction: Direction) {
         this.x = x
         this.y = y
         this.direction = direction
@@ -15,7 +17,7 @@ class Rover(val speed: Int) {
     }
 
     fun forward(step: Int) {
-        when(this.direction) {
+        when (this.direction) {
             Direction.SOUTH -> this.y -= step
             Direction.NORTH -> this.y += step
             Direction.WEST -> this.x -= step
@@ -36,7 +38,9 @@ class Rover(val speed: Int) {
     }
 
     fun land(mars: Mars): String {
-        this.land("23,50|S")
+        val x = Random.nextInt(mars.width)
+        val y = Random.nextInt(mars.height)
+        this.land(x.toString() + "," + y.toString() + "|" + Direction.SOUTH.short())
         return this.state;
     }
 

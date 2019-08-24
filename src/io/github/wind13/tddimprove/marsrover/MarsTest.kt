@@ -53,7 +53,6 @@ object MarsTest {
         assert(r < size)
         val o = Random.nextInt(size)
         assert(o < size)
-//        print(mars.display())
         val s = """
         OOOOOOOOOO
         OOOOOOOOOO
@@ -67,5 +66,15 @@ object MarsTest {
         OOOOOOOOOO
         """.trimIndent()
         assertEquals(s, mars.display())
+    }
+
+    @Test
+    fun test_rover_research(): Unit {
+        val size = 10
+        val mars = Mars(size, size)
+        val state = "23,50|S"
+        val rover = Rover(state)
+        assertEquals(Direction.SOUTH, rover.direction)
+        rover.forward(30)
     }
 }

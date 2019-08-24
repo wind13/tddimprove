@@ -4,4 +4,8 @@ class Mars(val width:Int, val height:Int) {
     fun main(args: Array<String>) {
         print("Mars main")
     }
+
+    fun display(): String {
+        return "mars "
+    }
 }

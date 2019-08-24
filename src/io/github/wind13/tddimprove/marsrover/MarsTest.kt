@@ -45,7 +45,7 @@ object MarsTest {
 
     @Test
     fun test_mars_created(): Unit {
-        val size = 1000
+        val size = 10
         val mars = Mars(size, size)
         assertEquals(size, mars.width)
         assertEquals(size, mars.height)
@@ -55,5 +55,6 @@ object MarsTest {
         val o = Random.nextInt(size)
         println(o)
         assert(o < size)
+        print(mars.display())
     }
 }

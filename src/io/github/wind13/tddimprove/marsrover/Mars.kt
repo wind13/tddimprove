@@ -1,8 +1,6 @@
 package io.github.wind13.tddimprove.marsrover
 
-object Mars {
-    val width:Int = 1000
-    val height:Int = 1000
+class Mars(val width:Int, val height:Int) {
 }
 
 fun add(a: Int, b: Int): Int {

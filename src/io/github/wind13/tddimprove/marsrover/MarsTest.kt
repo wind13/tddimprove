@@ -51,6 +51,18 @@ object MarsTest {
     }
 
     @Test
+    fun test_rover_receive(): Unit {
+        val size = 100
+        val mars = Mars(size, size)
+        val speed = 2
+        val state = "23,50|S"
+        val rover = Rover(speed)
+        rover.land(mars, state)
+        rover.receive("f9lf1lf9rf1r")
+        assertEquals(state, rover.state)
+    }
+
+    @Test
     fun test_mars_created(): Unit {
         val size = 10
         val mars = Mars(size, size)
@@ -101,6 +113,5 @@ object MarsTest {
         val base = Base(mars, roverMock)
         base.receive(stateLand)
         assertEquals(stateLand, base.rover.state)
-        assertEquals("0,0", base.nearestCorner)
     }
 }

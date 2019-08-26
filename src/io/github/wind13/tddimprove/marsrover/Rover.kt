@@ -63,6 +63,11 @@ class Rover(val speed: Int) {
         this.state = x.toString() + "," + y.toString() + "|" + direction.short()
     }
 
+    fun receive(command: String) {
+
+
+    }
+
     lateinit var state: String
         private set
     var x: Int = 0

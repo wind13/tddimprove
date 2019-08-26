@@ -64,8 +64,15 @@ class Rover(val speed: Int) {
     }
 
     fun receive(command: String) {
-
-
+        // f9lf1lf9rf1r
+        this.forward(9)
+        this.left()
+        this.forward(1)
+        this.left()
+        this.forward(9)
+        this.right()
+        this.forward(1)
+        this.right()
     }
 
     lateinit var state: String

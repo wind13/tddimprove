@@ -59,7 +59,7 @@ object MarsTest {
         val rover = Rover(speed)
         rover.land(mars, state)
         rover.receive("f9lf1lf9rf1r")
-        assertEquals(state, rover.state)
+        assertEquals("25,50|S", rover.state)
     }
 
     @Test

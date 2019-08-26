@@ -100,5 +100,6 @@ object MarsTest {
         val roverMock = Rover(speed)
         val base = Base(mars, roverMock)
         base.receive(stateLand)
+        assertEquals(stateLand, base.rover.state)
     }
 }

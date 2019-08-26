@@ -59,7 +59,7 @@ class Rover(val speed: Int) {
         return this.state
     }
 
-    fun updateState() {
+    private fun updateState() {
         this.state = x.toString() + "," + y.toString() + "|" + direction.short()
     }
 

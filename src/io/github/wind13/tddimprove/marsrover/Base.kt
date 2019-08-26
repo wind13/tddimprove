@@ -5,6 +5,7 @@ class Base(val mars: Mars, val rover: Rover) {
 
     fun receive(newState: String) {
         states.add(newState)
+        rover.land(mars, newState)
     }
 
 }

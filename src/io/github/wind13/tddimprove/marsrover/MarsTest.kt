@@ -101,5 +101,6 @@ object MarsTest {
         val base = Base(mars, roverMock)
         base.receive(stateLand)
         assertEquals(stateLand, base.rover.state)
+        assertEquals("0,0", base.nearestCorner)
     }
 }

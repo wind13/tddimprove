@@ -92,5 +92,8 @@ object MarsTest {
         rover.forward(30)
         val stateLand = rover.send()
         assertEquals("23,20|S", stateLand)
+
+        val base = Base(mars)
+        base.receive(stateLand)
     }
 }

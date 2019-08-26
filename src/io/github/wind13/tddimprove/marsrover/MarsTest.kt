@@ -75,8 +75,11 @@ object MarsTest {
     fun test_base_created(): Unit {
         val size = 100
         val mars = Mars(size, size)
-        val base = Base(mars)
+        val speed = 2
+        val roverMock = Rover(speed)
+        val base = Base(mars, roverMock)
         assertEquals(mars, base.mars)
+        assertEquals(roverMock, base.rover)
     }
 
     @Test
@@ -84,7 +87,8 @@ object MarsTest {
         val size = 100
         val mars = Mars(size, size)
         val state = "23,50|S"
-        val rover = Rover(2)
+        val speed = 2
+        val rover = Rover(speed)
         rover.land(mars, state)
         assertEquals(state, rover.state)
         assertEquals(23, rover.x)
@@ -93,7 +97,8 @@ object MarsTest {
         val stateLand = rover.send()
         assertEquals("23,20|S", stateLand)
 
-        val base = Base(mars)
+        val roverMock = Rover(speed)
+        val base = Base(mars, roverMock)
         base.receive(stateLand)
     }
 }

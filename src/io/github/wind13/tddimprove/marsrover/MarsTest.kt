@@ -72,6 +72,14 @@ object MarsTest {
     }
 
     @Test
+    fun test_base_created(): Unit {
+        val size = 100
+        val mars = Mars(size, size)
+        val base = Base(mars)
+        assertEquals(mars, base.mars)
+    }
+
+    @Test
     fun test_rover_research(): Unit {
         val size = 100
         val mars = Mars(size, size)

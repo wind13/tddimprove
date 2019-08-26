@@ -77,11 +77,12 @@ object MarsTest {
         val mars = Mars(size, size)
         val state = "23,50|S"
         val rover = Rover(2)
-        val stateLand = rover.land(mars, state)
+        rover.land(mars, state)
         assertEquals(state, rover.state)
-        assertEquals(state, stateLand)
         assertEquals(23, rover.x)
         assertEquals(Direction.SOUTH, rover.direction)
         rover.forward(30)
+        val stateLand = rover.send()
+        assertEquals("23,20|S", stateLand)
     }
 }

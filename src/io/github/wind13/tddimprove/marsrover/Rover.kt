@@ -40,13 +40,23 @@ class Rover(val speed: Int) {
     fun land(mars: Mars): String {
         val x = Random.nextInt(mars.width)
         val y = Random.nextInt(mars.height)
-        this.land(x.toString() + "," + y.toString() + "|" + Direction.SOUTH.short())
+        this.land(x.toString() + "," + y.toString() + "|" + Direction.random())
         return this.state;
     }
 
     fun land(mars: Mars, state: String): String {
         this.land(state)
         return this.state;
+    }
+
+    fun send(): String {
+        // send event to base
+        println("Send event to base...")
+        return this.gotState()
+    }
+
+    fun gotState(): String {
+        return x.toString() + "," + y.toString() + "|" + direction.short()
     }
 
     lateinit var state: String

@@ -23,14 +23,17 @@ class Rover(val speed: Int) {
             Direction.WEST -> this.x -= step
             Direction.EAST -> this.x += step
         }
+        this.updateState()
     }
 
     fun left() {
         this.direction = this.direction.left()
+        this.updateState()
     }
 
     fun right() {
         this.direction = this.direction.right()
+        this.updateState()
     }
 
     fun backward(step: Int) {
@@ -44,6 +47,7 @@ class Rover(val speed: Int) {
         return this.state;
     }
 
+    // This is for test function mock random land position.
     fun land(mars: Mars, state: String): String {
         this.land(state)
         return this.state;
@@ -51,12 +55,12 @@ class Rover(val speed: Int) {
 
     fun send(): String {
         // send event to base
-        println("Send event to base...")
-        return this.gotState()
+        println("Send \"" + this.state + "\" event to base...")
+        return this.state
     }
 
-    fun gotState(): String {
-        return x.toString() + "," + y.toString() + "|" + direction.short()
+    fun updateState() {
+        this.state = x.toString() + "," + y.toString() + "|" + direction.short()
     }
 
     lateinit var state: String

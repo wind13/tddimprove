@@ -14,18 +14,12 @@ class Mars(val width:Int, val height:Int) {
     }
 
     fun research(x: Int, y: Int): String {
-        return """
-        OOOOOOOOOO
-        OOOOOOOOOO
-        OOOOOOOOOO
-        OOOOOOOOOO
-        OOOOOOOOOO
-        OOOOOOOOOO
-        OOOOOOOOOO
-        OOOOOOOOOO
-        OOOOOOOOOO
-        *OOOOOOOOO
-        """.trimIndent()
+        val ys = area.split("\n").toMutableList()
+        val iy = this.height - 1 - y
+        var xs = ys.get(iy)
+        xs = xs.replaceRange(x, x+1, Y)
+        ys[iy] = xs
+        return ys.joinToString("\n")
     }
 
     var area = this.display()

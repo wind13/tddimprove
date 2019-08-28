@@ -3,6 +3,9 @@ package io.github.wind13.tddimprove.marsrover
 import kotlin.random.Random
 
 class Rover(val speed: Int) {
+
+    public final val commandUnit = "9l1l9r1r"
+
     private fun land(x: Int, y: Int, direction: Direction) {
         this.x = x
         this.y = y

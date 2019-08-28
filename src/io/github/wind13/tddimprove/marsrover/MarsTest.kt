@@ -58,7 +58,8 @@ object MarsTest {
         val state = "23,50|S"
         val rover = Rover(speed)
         rover.land(mars, state)
-        rover.receive("f9lf1lf9rf1r")
+        // Just forward, no backward, and max <= 9 step
+        rover.receive(rover.commandUnit)
         assertEquals("25,50|S", rover.state)
     }
 

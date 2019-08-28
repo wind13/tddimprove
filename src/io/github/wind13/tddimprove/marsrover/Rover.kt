@@ -92,7 +92,8 @@ class Rover(val speed: Int) {
     }
 
     fun nCommands(n: Int): String {
-//        (1 .. n).reduce { acc, i ->  }
+        val a = (1 .. n).map { this.commandUnit }.joinToString { "" }
+        println(a)
         return this.commandUnit + this.commandUnit +
                 this.commandUnit + this.commandUnit + this.commandUnit
     }

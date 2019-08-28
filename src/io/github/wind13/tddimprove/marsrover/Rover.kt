@@ -34,6 +34,9 @@ class Rover(val speed: Int) {
         if (this.y < 0) {
             this.y = this.mars.height + this.y
         }
+        if (this.x < 0) {
+            this.x = this.mars.width + this.x
+        }
         this.updateState()
     }
 

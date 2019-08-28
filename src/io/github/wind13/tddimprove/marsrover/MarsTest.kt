@@ -78,6 +78,8 @@ object MarsTest {
         assertEquals("23,4|N", rover.state)
         rover.receive("rr9")
         assertEquals("23,95|S", rover.state)
+        rover.receive("r999")
+        assertEquals("96,95|W", rover.state)
     }
 
     @Test

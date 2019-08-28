@@ -109,18 +109,19 @@ object MarsTest {
         rover.land(mars, state)
         rover.receive("r5")
         val w = """
+            00*0000000
+            00*0000000
+            00*0000000
+            00*0000000
+            00*0000000
             0000000000
             0000000000
             0000000000
             0000000000
-            0000000000
-            0000000000
-            0000000000
-            0000000000
-            0000000000
-            0000000000
+            00*0000000
         """.trimIndent()
-        assertEquals(s, mars.display())
+        assertEquals(w, mars.area)
+        assertEquals("2,0|N", rover.state)
     }
 
     @Test

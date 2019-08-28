@@ -12,4 +12,6 @@ class Mars(val width:Int, val height:Int) {
             (1..width).map { N }.joinToString("")
         }.joinToString("\n")
     }
+
+    var area = this.display()
 }

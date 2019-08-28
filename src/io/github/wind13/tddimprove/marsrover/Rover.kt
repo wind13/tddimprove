@@ -28,7 +28,7 @@ class Rover(val speed: Int) {
             Direction.WEST -> this.x -= step
             Direction.EAST -> this.x += step
         }
-        if (this.y > this.mars.height) {
+        if (this.y >= this.mars.height) {
             this.y = this.y - this.mars.height
         }
         if (this.y < 0) {
@@ -37,10 +37,22 @@ class Rover(val speed: Int) {
         if (this.x < 0) {
             this.x = this.mars.width + this.x
         }
-        if (this.x > this.mars.width) {
+        if (this.x >= this.mars.width) {
             this.x = this.x - this.mars.width
         }
         this.updateState()
+        this.mars.area = """
+            00*0000000
+            00*0000000
+            00*0000000
+            00*0000000
+            00*0000000
+            0000000000
+            0000000000
+            0000000000
+            0000000000
+            00*0000000
+        """.trimIndent()
     }
 
     fun left() {

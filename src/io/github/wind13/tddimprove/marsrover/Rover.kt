@@ -67,30 +67,24 @@ class Rover(val speed: Int) {
     }
 
     fun receive(command: String) {
-        // f9lf1lf9rf1r
-//        var fw = false
+        // 9l1l9r1r
+        var fw = false
         command.chars().forEach {
-//            when{
-//                it == 'l'.toInt() -> this.left()
-//                it == 'r'.toInt() -> this.right()
-//                it == 'f'.toInt() -> fw = true
-//                it <= '9'.toInt() && it >= '0'.toInt() -> this.forward(it.toChar().toInt())
-//                else -> this.doNothing()
-//            }
-            println(it)
+            when{
+                it == 'l'.toInt() -> this.left()
+                it == 'r'.toInt() -> this.right()
+                it <= '9'.toInt() && it > '0'.toInt() -> this.forward(it.toChar().toString().toInt())
+                else -> this.doNothing()
+            }
         }
-        println('0'.toInt())
-        println('9'.toInt())
-        println(57.toChar().toString().toInt())
-        println(57.toChar().toInt())
-        this.forward(9)
-        this.left()
-        this.forward(1)
-        this.left()
-        this.forward(9)
-        this.right()
-        this.forward(1)
-        this.right()
+//        this.forward(9)
+//        this.left()
+//        this.forward(1)
+//        this.left()
+//        this.forward(9)
+//        this.right()
+//        this.forward(1)
+//        this.right()
     }
 
     lateinit var state: String

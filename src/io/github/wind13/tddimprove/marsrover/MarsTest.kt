@@ -66,6 +66,19 @@ object MarsTest {
     }
 
     @Test
+    fun test_rover_cross_over(): Unit {
+        val size = 100
+        val mars = Mars(size, size)
+        val speed = 2
+        val state = "23,50|S"
+        val rover = Rover(speed)
+        rover.land(mars, state)
+        // Just forward, no backward, and max <= 9 step
+        rover.receive("rr999999")
+        assertEquals("23,104|N", rover.state)
+    }
+
+    @Test
     fun test_mars_created(): Unit {
         val size = 10
         val mars = Mars(size, size)

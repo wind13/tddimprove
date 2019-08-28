@@ -4,6 +4,7 @@ import kotlin.random.Random
 
 class Rover(val speed: Int) {
 
+    // Just forward, no backward, and max <= 9 step
     public final val commandUnit = "9l1l9r1r"
 
     private fun land(x: Int, y: Int, direction: Direction) {
@@ -73,7 +74,7 @@ class Rover(val speed: Int) {
         // 9l1l9r1r
         var fw = false
         command.chars().forEach {
-            when{
+            when {
                 it == 'l'.toInt() -> this.left()
                 it == 'r'.toInt() -> this.right()
                 it <= '9'.toInt() && it > '0'.toInt() -> this.forward(it.toChar().toString().toInt())
@@ -88,6 +89,12 @@ class Rover(val speed: Int) {
 //        this.right()
 //        this.forward(1)
 //        this.right()
+    }
+
+    fun nCommands(n: Int): String {
+//        (1 .. n).reduce { acc, i ->  }
+        return this.commandUnit + this.commandUnit +
+                this.commandUnit + this.commandUnit + this.commandUnit
     }
 
     lateinit var state: String

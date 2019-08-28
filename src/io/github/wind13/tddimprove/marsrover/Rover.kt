@@ -81,6 +81,7 @@ class Rover(val speed: Int) {
         }
         println('0'.toInt())
         println('9'.toInt())
+        println(57.toChar())
         println(57.toChar().toInt())
         this.forward(9)
         this.left()

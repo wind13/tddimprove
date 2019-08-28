@@ -147,7 +147,7 @@ object MarsTest {
             OOOOOOOOOO
             OOOOOOOOOO
             OOOOOOOOOO
-            OOOOOOOOOO
+            OO*OOOOOOO
             OOOOOOOOOO
             OOOOOOOOOO
             OOOOOOOOOO

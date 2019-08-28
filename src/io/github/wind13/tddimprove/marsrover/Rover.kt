@@ -65,14 +65,14 @@ class Rover(val speed: Int) {
         this.mars = mars
         val x = Random.nextInt(mars.width)
         val y = Random.nextInt(mars.height)
-        this.land(x.toString() + "," + y.toString() + "|" + Direction.random())
-        return this.state;
+        return this.land(mars, x.toString() + "," + y.toString() + "|" + Direction.random())
     }
 
     // This is for test function mock random land position.
     fun land(mars: Mars, state: String): String {
         this.mars = mars
         this.land(state)
+        this.mars.research(this.x, this.y)
         return this.state;
     }
 

@@ -103,6 +103,12 @@ object MarsTest {
         OOOOOOOOOO
         """.trimIndent()
         assertEquals(s, mars.display())
+        val speed = 2
+        val state = "2,5|W"
+        val rover = Rover(speed)
+        rover.land(mars, state)
+        // Just forward, no backward, and max <= 9 step
+        rover.receive("r5")
     }
 
     @Test

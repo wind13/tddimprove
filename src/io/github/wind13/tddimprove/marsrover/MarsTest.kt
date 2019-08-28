@@ -76,6 +76,8 @@ object MarsTest {
         // Just forward, no backward, and max <= 9 step
         rover.receive("rr999999")
         assertEquals("23,4|N", rover.state)
+        rover.receive("rr9")
+        assertEquals("23,95|S", rover.state)
     }
 
     @Test

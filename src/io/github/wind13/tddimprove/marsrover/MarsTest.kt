@@ -115,7 +115,22 @@ object MarsTest {
         OOOOOOOOOO
         *OOOOOOOOO
         """.trimIndent()
-        assertEquals(x, mars.research(0, 0))
+        mars.research(0, 0)
+        assertEquals(x, mars.area)
+        val y = """
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        *OOOOOOOOO
+        *OOOOOOOOO
+        """.trimIndent()
+        mars.research(0, 1)
+        assertEquals(y, mars.area)
         val speed = 2
         val state = "2,5|W"
         val rover = Rover(speed)

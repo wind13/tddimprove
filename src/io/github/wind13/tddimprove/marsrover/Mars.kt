@@ -19,7 +19,8 @@ class Mars(val width:Int, val height:Int) {
         var xs = ys.get(iy)
         xs = xs.replaceRange(x, x+1, Y)
         ys[iy] = xs
-        return ys.joinToString("\n")
+        this.area = ys.joinToString("\n")
+        return this.area
     }
 
     var area = this.display()

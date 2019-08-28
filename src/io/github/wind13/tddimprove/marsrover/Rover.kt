@@ -22,26 +22,42 @@ class Rover(val speed: Int) {
     }
 
     fun forward(step: Int) {
-        when (this.direction) {
-            Direction.SOUTH -> this.y -= step
-            Direction.NORTH -> this.y += step
-            Direction.WEST -> this.x -= step
-            Direction.EAST -> this.x += step
+        val ox = this.x
+        val oy = this.y
+        var i = 0
+        var m = step
+        if (step < 0) {
+            this.direction = this.direction.right().right()
+            m = -step
         }
-        if (this.y >= this.mars.height) {
-            this.y = this.y - this.mars.height
+        while (i < m) {
+            println("y1:" + this.y)
+            when (this.direction) {
+                Direction.SOUTH -> this.y--
+                Direction.NORTH -> this.y++
+                Direction.WEST -> this.x--
+                Direction.EAST -> this.x++
+            }
+            if (this.y >= this.mars.height) {
+                this.y = this.y - this.mars.height
+            }
+            if (this.y < 0) {
+                this.y = this.mars.height + this.y
+            }
+            if (this.x < 0) {
+                this.x = this.mars.width + this.x
+            }
+            if (this.x >= this.mars.width) {
+                this.x = this.x - this.mars.width
+            }
+            println("y2:" + this.y)
+            this.mars.research(this.x, this.y)
+            i++
         }
-        if (this.y < 0) {
-            this.y = this.mars.height + this.y
-        }
-        if (this.x < 0) {
-            this.x = this.mars.width + this.x
-        }
-        if (this.x >= this.mars.width) {
-            this.x = this.x - this.mars.width
+        if (step < 0) {
+            this.direction = this.direction.right().right()
         }
         this.updateState()
-        this.mars.research(this.x, this.y)
     }
 
     fun left() {
@@ -99,7 +115,7 @@ class Rover(val speed: Int) {
     }
 
     fun nCommands(n: Int): String {
-        return (1 .. n).map { this.commandUnit }.joinToString("")
+        return (1..n).map { this.commandUnit }.joinToString("")
     }
 
     lateinit var state: String

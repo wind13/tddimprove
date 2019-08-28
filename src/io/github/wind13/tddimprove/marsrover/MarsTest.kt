@@ -143,10 +143,10 @@ object MarsTest {
         rover.land(mars, state)
         rover.receive("r5")
         val w = """
-            OOOOOOOOOO
-            OOOOOOOOOO
-            OOOOOOOOOO
-            OOOOOOOOOO
+            OO*OOOOOOO
+            OO*OOOOOOO
+            OO*OOOOOOO
+            OO*OOOOOOO
             OO*OOOOOOO
             OOOOOOOOOO
             OOOOOOOOOO

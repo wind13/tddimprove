@@ -103,6 +103,19 @@ object MarsTest {
         OOOOOOOOOO
         """.trimIndent()
         assertEquals(s, mars.display())
+        val x = """
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        *OOOOOOOOO
+        """.trimIndent()
+        assertEquals(x, mars.research(0, 0))
         val speed = 2
         val state = "2,5|W"
         val rover = Rover(speed)

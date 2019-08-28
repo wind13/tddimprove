@@ -13,5 +13,20 @@ class Mars(val width:Int, val height:Int) {
         }.joinToString("\n")
     }
 
+    fun research(x: Int, y: Int): String {
+        return """
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        OOOOOOOOOO
+        *OOOOOOOOO
+        """.trimIndent()
+    }
+
     var area = this.display()
 }

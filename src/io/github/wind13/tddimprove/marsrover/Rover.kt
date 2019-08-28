@@ -4,7 +4,7 @@ import kotlin.random.Random
 
 class Rover(val speed: Int) {
 
-    private lateinit var mars: Mars
+    lateinit var mars: Mars
     // Just forward, no backward, and max <= 9 step
     public final val commandUnit = "9l1l9r1r"
 
@@ -41,18 +41,7 @@ class Rover(val speed: Int) {
             this.x = this.x - this.mars.width
         }
         this.updateState()
-        this.mars.area = """
-            00*0000000
-            00*0000000
-            00*0000000
-            00*0000000
-            00*0000000
-            0000000000
-            0000000000
-            0000000000
-            0000000000
-            00*0000000
-        """.trimIndent()
+        this.mars.research(this.x, this.y)
     }
 
     fun left() {
@@ -98,7 +87,6 @@ class Rover(val speed: Int) {
     }
 
     fun receive(command: String) {
-        // 9l1l9r1r
         var fw = false
         command.chars().forEach {
             when {
@@ -108,14 +96,6 @@ class Rover(val speed: Int) {
                 else -> this.doNothing()
             }
         }
-//        this.forward(9)
-//        this.left()
-//        this.forward(1)
-//        this.left()
-//        this.forward(9)
-//        this.right()
-//        this.forward(1)
-//        this.right()
     }
 
     fun nCommands(n: Int): String {

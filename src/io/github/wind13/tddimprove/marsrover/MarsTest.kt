@@ -131,22 +131,28 @@ object MarsTest {
         """.trimIndent()
         mars.research(0, 1)
         assertEquals(y, mars.area)
+    }
+
+    @Test
+    fun test_mars_research(): Unit {
+        val size = 10
+        val mars = Mars(size, size)
         val speed = 2
         val state = "2,5|W"
         val rover = Rover(speed)
         rover.land(mars, state)
         rover.receive("r5")
         val w = """
-            00*0000000
-            00*0000000
-            00*0000000
-            00*0000000
-            00*0000000
-            0000000000
-            0000000000
-            0000000000
-            0000000000
-            00*0000000
+            OOOOOOOOOO
+            OOOOOOOOOO
+            OOOOOOOOOO
+            OOOOOOOOOO
+            OOOOOOOOOO
+            OOOOOOOOOO
+            OOOOOOOOOO
+            OOOOOOOOOO
+            OOOOOOOOOO
+            OO*OOOOOOO
         """.trimIndent()
         assertEquals(w, mars.area)
         assertEquals("2,0|N", rover.state)

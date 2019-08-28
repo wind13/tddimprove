@@ -13,14 +13,13 @@ class Mars(val width:Int, val height:Int) {
         }.joinToString("\n")
     }
 
-    fun research(x: Int, y: Int): String {
-        val ys = area.split("\n").toMutableList()
+    fun research(x: Int, y: Int): Unit {
+        val ys = this.area.split("\n").toMutableList()
         val iy = this.height - 1 - y
         var xs = ys.get(iy)
         xs = xs.replaceRange(x, x+1, Y)
         ys[iy] = xs
         this.area = ys.joinToString("\n")
-        return this.area
     }
 
     var area = this.display()

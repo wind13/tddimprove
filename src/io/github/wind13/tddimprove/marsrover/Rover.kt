@@ -4,6 +4,7 @@ import kotlin.random.Random
 
 class Rover(val speed: Int) {
 
+    private lateinit var mars: Mars
     // Just forward, no backward, and max <= 9 step
     public final val commandUnit = "9l1l9r1r"
 
@@ -27,6 +28,9 @@ class Rover(val speed: Int) {
             Direction.WEST -> this.x -= step
             Direction.EAST -> this.x += step
         }
+        if (this.y > this.mars.height) {
+            this.y = this.y - this.mars.height
+        }
         this.updateState()
     }
 
@@ -48,6 +52,7 @@ class Rover(val speed: Int) {
     }
 
     fun land(mars: Mars): String {
+        this.mars = mars
         val x = Random.nextInt(mars.width)
         val y = Random.nextInt(mars.height)
         this.land(x.toString() + "," + y.toString() + "|" + Direction.random())
@@ -56,6 +61,7 @@ class Rover(val speed: Int) {
 
     // This is for test function mock random land position.
     fun land(mars: Mars, state: String): String {
+        this.mars = mars
         this.land(state)
         return this.state;
     }

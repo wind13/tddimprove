@@ -69,7 +69,7 @@ class Rover(val speed: Int) {
     fun receive(command: String) {
         // f9lf1lf9rf1r
 //        var fw = false
-//        command.chars().forEach {
+        command.chars().forEach {
 //            when{
 //                it == 'l'.toInt() -> this.left()
 //                it == 'r'.toInt() -> this.right()
@@ -77,7 +77,8 @@ class Rover(val speed: Int) {
 //                it <= '9'.toInt() && it >= '0'.toInt() -> this.forward(it.toChar().toInt())
 //                else -> this.doNothing()
 //            }
-//        }
+            println(it)
+        }
         println('1'.toInt())
         println('9'.toInt())
         this.forward(9)

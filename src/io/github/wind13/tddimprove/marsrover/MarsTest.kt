@@ -107,8 +107,20 @@ object MarsTest {
         val state = "2,5|W"
         val rover = Rover(speed)
         rover.land(mars, state)
-        // Just forward, no backward, and max <= 9 step
         rover.receive("r5")
+        val w = """
+            0000000000
+            0000000000
+            0000000000
+            0000000000
+            0000000000
+            0000000000
+            0000000000
+            0000000000
+            0000000000
+            0000000000
+        """.trimIndent()
+        assertEquals(s, mars.display())
     }
 
     @Test

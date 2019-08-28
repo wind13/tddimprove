@@ -31,33 +31,35 @@ class Rover(val speed: Int) {
             m = -step
         }
         while (i < m) {
-            println("y1:" + this.y)
-            when (this.direction) {
-                Direction.SOUTH -> this.y--
-                Direction.NORTH -> this.y++
-                Direction.WEST -> this.x--
-                Direction.EAST -> this.x++
-            }
-            if (this.y >= this.mars.height) {
-                this.y = this.y - this.mars.height
-            }
-            if (this.y < 0) {
-                this.y = this.mars.height + this.y
-            }
-            if (this.x < 0) {
-                this.x = this.mars.width + this.x
-            }
-            if (this.x >= this.mars.width) {
-                this.x = this.x - this.mars.width
-            }
-            println("y2:" + this.y)
-            this.mars.research(this.x, this.y)
-            i++
+            i = runOneStep(i)
         }
         if (step < 0) {
             this.direction = this.direction.right().right()
         }
         this.updateState()
+    }
+
+    private fun runOneStep(i: Int): Int {
+        when (this.direction) {
+            Direction.SOUTH -> this.y--
+            Direction.NORTH -> this.y++
+            Direction.WEST -> this.x--
+            Direction.EAST -> this.x++
+        }
+        if (this.y >= this.mars.height) {
+            this.y = this.y - this.mars.height
+        }
+        if (this.y < 0) {
+            this.y = this.mars.height + this.y
+        }
+        if (this.x < 0) {
+            this.x = this.mars.width + this.x
+        }
+        if (this.x >= this.mars.width) {
+            this.x = this.x - this.mars.width
+        }
+        this.mars.research(this.x, this.y)
+        return i + 1
     }
 
     fun left() {
